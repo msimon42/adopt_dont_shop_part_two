@@ -1,0 +1,14 @@
+
+<h1><%= @shelter.name %></h1>
+<ul id='shelter-show'>
+  <li>Address: <%= @shelter.address %></li>
+  <li>City: <%= @shelter.city %></li>
+  <li>State: <%= @shelter.state %></li>
+  <li>Zip: <%= @shelter.zip %></li>
+</ul>
+<ul class='edit-delete'>
+<li><%= link_to "<button type='button' class='btn btn-success'>Update Info</button>".html_safe, "/shelters/#{@shelter.id}/edit" %></li>
+<li><%= link_to "<button type='button' class='btn btn-primary'>View Pets</button>".html_safe, "/shelters/#{@shelter.id}/pets" %></li>
+<li><%= form_tag "/shelters/#{@shelter.id}", method: :delete do %>
+  <%= submit_tag 'Delete', class: 'btn btn-danger' %></li></ul>
+<% end %>

@@ -1,0 +1,16 @@
+
+<h1>Add Pet</h1>
+<%= form_tag "/shelters/#{@shelter.id}/pets" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br>
+  <%= label_tag :image_file %>
+  <%= text_field_tag :image_file %><br>
+  <%= label_tag :description %>
+  <%= text_field_tag :description %><br>
+  <%= label_tag :approx_age %>
+  <%= text_field_tag :approx_age %><br>
+  <p> Male: <%= radio_button_tag 'gender', 'Male' %>
+  Female: <%= radio_button_tag 'gender', 'Female' %></p>
+  <%= submit_tag 'Submit', class: 'btn btn-success' %>
+<% end %>
+<%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter.id}/pets" %>
