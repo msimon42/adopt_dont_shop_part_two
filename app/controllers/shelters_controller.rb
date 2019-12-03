@@ -1,5 +1,5 @@
 class SheltersController < ApplicationController
-  def shelters
+  def index
     @shelters = Shelter.all
   end
 
@@ -15,8 +15,12 @@ class SheltersController < ApplicationController
       state: params[:shelter][:state],
       zip: params[:shelter][:zip]
       })
-    @shelter.save
-    redirect_to "/shelters"
+    if @shelter.save
+      redirect_to "/shelters"
+    else
+      flash[:sad] = 'You have not entered all required information.'
+      render :new
+    end
   end
 
   def show
@@ -48,13 +52,6 @@ class SheltersController < ApplicationController
 
   def pets
     @shelter = Shelter.find(params[:id])
-    @shelter_pets = @shelter.find_pets
+    @shelter_pets = @shelter.pets
   end
-
-  private
-
-
-
-
-
 end
