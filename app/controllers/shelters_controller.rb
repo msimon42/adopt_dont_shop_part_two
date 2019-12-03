@@ -4,24 +4,24 @@ class SheltersController < ApplicationController
   end
 
   def new
-
+    @shelter = Shelter.new
   end
 
   def create
-    shelter = Shelter.new({
-      name: params[:name],
-      address: params[:address],
-      city: params[:city],
-      state: params[:state],
-      zip: params[:zip]
+    @shelter = Shelter.new({
+      name: params[:shelter][:name],
+      address: params[:shelter][:address],
+      city: params[:shelter][:city],
+      state: params[:shelter][:state],
+      zip: params[:shelter][:zip]
       })
-    shelter.save
+    @shelter.save
     redirect_to "/shelters"
   end
 
   def show
     @shelter = Shelter.find(params[:id])
-    @reviews = @shelter.reviews 
+    @reviews = @shelter.reviews
   end
 
   def edit
@@ -51,7 +51,9 @@ class SheltersController < ApplicationController
     @shelter_pets = @shelter.find_pets
   end
 
-  #private
+  private
+
+
 
 
 
