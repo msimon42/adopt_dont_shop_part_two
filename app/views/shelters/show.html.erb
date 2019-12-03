@@ -12,3 +12,18 @@
 <li><%= form_tag "/shelters/#{@shelter.id}", method: :delete do %>
   <%= submit_tag 'Delete', class: 'btn btn-danger' %></li></ul>
 <% end %>
+
+<h3 id='reviews-header'>Reviews</h3>
+<% @reviews.each do |review| %>
+<div class="media review">
+<% if review.image && review.image != '' %>
+  <img src="<%= review.image %>" class="mr-3" alt="..." style="width:150px;height:150px">
+<% end %>
+<div class="media-body">
+  <h5 class="mt-0"><%= review.title %> <span id='rating'>Rating: <%= review.rating %>/5</h5>
+  <p><%= review.content %></p>
+</div>
+</div>
+<% end %>
+
+<%= link_to "<button type='button' class='btn btn-primary'>Add a Review</button>".html_safe, "/shelters/#{@shelter.id}/new-review" %>

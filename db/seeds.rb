@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Review.destroy_all
 Shelter.destroy_all
 Pet.destroy_all
 
@@ -46,6 +47,25 @@ shelter_5 = Shelter.create(
   city: 'Denver',
   state: 'CO',
   zip: '80244'
+)
+
+review_1 = Review.create(
+  title: 'Really bad',
+  rating: 1,
+  content: 'Literally the worst shelter I have ever seen. You should be ashamed of yourselves.',
+  image: 'https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F515803%2Fbusinessman-with-thumb-down.jpg&w=700&op=resize',
+  created_at: Time.now,
+  shelter_id: shelter_1.id
+
+)
+
+review_2 = Review.create(
+  title: 'Really good',
+  rating: 5,
+  content: 'Literally the best shelter I have ever seen. You should not be ashamed of yourselves.',
+  created_at: Time.now,
+  shelter_id: shelter_1.id
+
 )
 
 pet_2 = Pet.create(
