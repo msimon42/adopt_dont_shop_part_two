@@ -1,53 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe 'pet show page', type: :feature do
+
+  before :each do
+    @shelter_1 = create :random_shelter
+    @pets = create_list(:random_pet, 2, shelter: @shelter_1)
+  end
+    
   it 'can see pet info' do
-    shelter_1 = Shelter.create(
-      name: 'Shelter of Dog',
-      address: '123 main street',
-      city: 'Denver',
-      state: 'CO',
-      zip: '80234'
-    )
 
-    pet_1 = Pet.create!(
-      shelter_id: shelter_1.id,
-      image: 'pet_1.jpg',
-      name: 'Fido',
-      description: 'Golden Retriver',
-      approx_age: 3,
-      sex: 'male',
-      adoptable?: true
+    visit "/pets/#{@pets[0].id}"
 
-      )
-
-      pet_2 = Pet.create!(
-        shelter_id: shelter_1.id,
-        image: 'pet_2.jpg',
-        name: 'Doodoo',
-        description: 'Golden Mutt',
-        approx_age: 3,
-        sex: 'male',
-        adoptable?: false 
-
-        )
-
-    visit "/pets/#{pet_1.id}"
-
-    expect(page).to have_content(pet_1.name)
-    expect(page).to have_css "img[src *= 'pet_1.jpg']"
-    expect(page).to have_content(pet_1.description)
-    expect(page).to have_content(pet_1.approx_age)
-    expect(page).to have_content(pet_1.sex)
+    expect(page).to have_content(@pets[0].name)
+    expect(page).to have_css "img[src *= #{@pets[0].image}]"
+    expect(page).to have_content(@pets[0].description)
+    expect(page).to have_content(@pets[0].approx_age)
+    expect(page).to have_content(@pets[0].sex)
     expect(page).to have_content('Available for Adoption')
 
-    visit "/pets/#{pet_2.id}"
+    visit "/pets/#{@pets[1].id}"
 
-    expect(page).to have_content(pet_2.name)
-    expect(page).to have_css "img[src *= 'pet_2.jpg']"
-    expect(page).to have_content(pet_2.description)
-    expect(page).to have_content(pet_2.approx_age)
-    expect(page).to have_content(pet_2.sex)
+    expect(page).to have_content(@pets[1].name)
+    expect(page).to have_css "img[src *= #{@pets[1].image}]"
+    expect(page).to have_content(@pets[1].description)
+    expect(page).to have_content(@pets[1].approx_age)
+    expect(page).to have_content(@pets[1].sex)
     expect(page).to have_content('Not available for adoption')
   end
 

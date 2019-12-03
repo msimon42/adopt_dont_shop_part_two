@@ -1,4 +1,9 @@
 RSpec.describe 'new review form', type: :feature do
+
+  before :each do
+    @shelter_1 = create :random_shelter
+    @reviews = create_list(:random_review, 5, shelter: @shelter_1)
+
   it 'can render fields' do
     shelter_1 = Shelter.create(
       name: 'Shelter of Dog',
@@ -8,7 +13,7 @@ RSpec.describe 'new review form', type: :feature do
       zip: '80234'
     )
 
-    visit "/shelters/#{shelter_1.id}/add-review"
+    visit "/shelters/#{@shelter_1.id}/add-review"
 
     expect(page).to have_field('Title')
     expect(page).to have_field('Image file')
@@ -22,7 +27,7 @@ RSpec.describe 'new review form', type: :feature do
 
     click_button 'Submit'
 
-    expect(current_path).to eq("/shelters/#{shelter_1.id}")
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content('A Terrible Experience with Terrible People')
   end
 end

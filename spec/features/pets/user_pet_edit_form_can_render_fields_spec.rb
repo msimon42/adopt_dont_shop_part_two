@@ -1,6 +1,6 @@
 RSpec.describe 'edit pet form', type: :feature do
-  it 'can render fields' do
-    shelter_1 = Shelter.create(
+  before :each do
+    @shelter_1 = Shelter.create(
       name: 'Shelter of Dog',
       address: '123 main street',
       city: 'Denver',
@@ -8,18 +8,12 @@ RSpec.describe 'edit pet form', type: :feature do
       zip: '80234'
     )
 
-    pet_1 = Pet.create!(
-      shelter_id: shelter_1.id,
-      image: 'pet_1.jpg',
-      name: 'Fido',
-      description: 'Golden Retriver',
-      approx_age: 3,
-      sex: 'male',
-      adoptable?: true
+    @pet_1 = create :random_pet, shelter: @shelter_1
 
-      )
+  end
 
-    visit "/pets/#{pet_1.id}/edit"
+  it 'can render fields' do
+    visit "/pets/#{@pet_1.id}/edit"
 
     expect(page).to have_field('Name')
     expect(page).to have_field('Image file')
@@ -31,8 +25,8 @@ RSpec.describe 'edit pet form', type: :feature do
 
     click_button 'Submit'
 
-    expect(current_path).to eq("/pets/#{pet_1.id}")
-    expect(page).to have_content('4')
-    expect(page).to have_content('Half breed golden retriever')
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to have_content(@pet_1.approx_age)
+    expect(page).to have_content(@pet_1.description)
   end
 end
