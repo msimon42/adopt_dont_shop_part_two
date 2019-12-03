@@ -14,7 +14,11 @@ class ReviewsController < ApplicationController
       shelter_id: @shelter_id
     )
 
-    @new_review.save
-    redirect_to "/shelters/#{@shelter_id}"
+    if @new_review.save
+      redirect_to "/shelters/#{@shelter_id}"
+    else
+      flash[:sad] = 'You have not entered all required information.'
+      render :new
+    end     
   end
 end
