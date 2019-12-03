@@ -25,6 +25,16 @@
         </ul>
       </div>
     </nav>
+
+    <% flash.each do |type, message| %>
+      <% if type == 'sad' %>
+        <p class='alert alert-danger'><%= message %></p>
+      <% else %>
+        <p><%= message %></p>
+      <% end %>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
