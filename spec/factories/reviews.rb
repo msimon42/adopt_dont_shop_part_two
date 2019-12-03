@@ -1,7 +1,14 @@
 FactoryBot.define do
   factory :random_review, class: Review do
     rating {rand(5)}
-    image {Faker::LoremFlickr.image}
+    image {Faker::LoremFlickr.image(search_terms: [Faker::Hipster.words])}
+    title {Faker::Quote.singular_siegler}
+    content {Faker::Quote.matz}
+    created_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
+  end
+
+  factory :random_review_without_image, class: Review do
+    rating {rand(5)}
     title {Faker::Quote.singular_siegler}
     content {Faker::Quote.matz}
     created_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
