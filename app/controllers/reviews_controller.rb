@@ -7,9 +7,10 @@ class ReviewsController < ApplicationController
     @shelter = Shelter.find(params[:id])
     @new_review = @shelter.reviews.create(review_params)
     if @new_review.save
+      flash[:happy] = 'Review submitted successfully.'
       redirect_to "/shelters/#{@shelter.id}"
     else
-      flash[:sad] = 'You have not entered all required information.'
+      flash[:sad] = 'Failed to submit review. Be sure to provide all required information.'
       render :new
     end
   end
@@ -24,10 +25,21 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
-    @review.update(review_params)
-    @review.save
-    redirect_to "/shelters/#{@review.shelter_id}"
+    review = Review.find(params[:id])
+    review.update(review_params)
+    if review.save
+      flash[:happy] = 'Review Updated Successfully'
+      redirect_to "/shelters/#{review.shelter_id}"
+    else
+      flash[:sad] = 'Failed to update review. Be sure to provide all required information.'
+      render :new
+    end
+  end
+
+  def destroy
+    review = Review.find(params[:id])
+    review.destroy
+    redirect_to "/shelters/#{review.shelter_id}"
   end
 
   private
