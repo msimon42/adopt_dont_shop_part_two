@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get '/shelters/:id/edit-review/:review_id', to: 'reviews#edit'
   get 'reviews/:id', to: 'reviews#show'
   patch '/reviews/:id', to: 'reviews#update'
+  delete '/reviews/:id', to: 'reviews#destroy'
 end
