@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
 
   def favorite_cookie
     cookies[:favorites] ||= ''
+    @favorite_count = cookies[:favorites].split(',').uniq.length
   end
 end
