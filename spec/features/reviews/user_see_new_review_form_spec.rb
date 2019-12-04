@@ -3,6 +3,7 @@ RSpec.describe 'new review form', type: :feature do
   before :each do
     @shelter_1 = create :random_shelter
     @reviews = create_list(:random_review, 5, shelter: @shelter_1)
+  end
 
   it 'can render fields' do
     shelter_1 = Shelter.create(
@@ -23,7 +24,7 @@ RSpec.describe 'new review form', type: :feature do
     fill_in 'Title', with: 'A Terrible Experience with Terrible People'
     fill_in 'Image file', with: 'pebbles.png'
     fill_in 'Comment', with: 'When I entered the shelter, a woman by the name of Maud told me my nose was too big. Very bad form.'
-    fill_in 'Rating', with: '1'
+    select 1, :from => :rating
 
     click_button 'Submit'
 
