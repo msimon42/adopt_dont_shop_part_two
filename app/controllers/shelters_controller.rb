@@ -18,7 +18,7 @@ class SheltersController < ApplicationController
     if @shelter.save
       redirect_to "/shelters"
     else
-      flash[:sad] = 'You have not entered all required information.'
+      flash[:sad] = 'Failed to create shelter. Be sure to provide all required information.'
       render :new
     end
   end
@@ -33,16 +33,15 @@ class SheltersController < ApplicationController
   end
 
   def update
-    @shelter = Shelter.find(params[:id])
-    @shelter.update({
-      name: params[:name],
-      address: params[:address],
-      city: params[:city],
-      state: params[:state],
-      zip: params[:zip]
-      })
-    @shelter.save
-    redirect_to "/shelters/#{@shelter.id}"
+    shelter = Shelter.find(params[:id])
+    shelter.update(shelter_params)
+    if shelter.save
+      redirect_to "/shelters/#{shelter.id}"
+      flash[:happy] = "#{shelter.name} successfully updated."
+    else
+      flash[:sad] = 'Failed to update shelter. Be sure to provide all required information.'
+      render :new
+    end
   end
 
   def destroy
@@ -50,8 +49,10 @@ class SheltersController < ApplicationController
     redirect_to "/shelters/"
   end
 
-  def pets
-    @shelter = Shelter.find(params[:id])
-    @shelter_pets = @shelter.pets
+  private
+
+  def shelter_params
+    params.permit(:name, :address, :city, :state, :zip)
   end
+
 end

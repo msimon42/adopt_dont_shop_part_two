@@ -13,37 +13,42 @@ class PetsController < ApplicationController
 
   def create
     @shelter = Shelter.find(params[:id])
-    pet = Pet.new({
-      shelter_id: @shelter.id,
-      image: params[:image_file],
-      name: params[:name],
-      description: params[:description],
-      approx_age: params[:approx_age],
-      sex: params[:gender],
-      adoptable?: true
-      })
-    pet.save
-    redirect_to "/shelters/#{@shelter.id}/pets"
+    pet = @shelter.pets.create(pet_params)
+    if pet.save
+      redirect_to "/shelters/#{@shelter.id}/pets"
+      flash[:happy] = "#{pet.name} has been successfully added to #{@shelter.name}."
+    else
+      flash[:sad] = 'Failed to create pet. Be sure to provide all required information.'
+      render :new
+    end
   end
 
   def edit
     @pet = Pet.find(params[:id])
+    @shelter_id = @pet.shelter_id
   end
 
   def update
-    @pet = Pet.find(params[:id])
-    @pet.update({
-      image: params[:image_file],
-      name: params[:name],
-      description: params[:description],
-      approx_age: params[:approx_age]
-      })
-    @pet.save
-    redirect_to "/pets/#{@pet.id}"
+    pet = Pet.find(params[:id])
+    pet.update(pet_params)
+    if pet.save
+      redirect_to "/pets/#{pet.id}"
+      flash[:happy] = "#{pet.name} has been successfully updated."
+    else
+      flash[:sad] = 'Failed to update pet. Be sure to provide all required information.'
+      render :new
+    end
   end
 
   def destroy
     Pet.destroy(params[:id])
     redirect_to "/pets/"
+    flash[:happy] = 'Pet successfully deleted.'
+  end
+
+  private
+
+  def pet_params
+    params.permit(:image, :name, :description, :sex, :approx_age, :adoptable?)
   end
 end

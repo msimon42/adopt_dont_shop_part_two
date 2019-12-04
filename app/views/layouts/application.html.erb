@@ -29,8 +29,10 @@
     <% flash.each do |type, message| %>
       <% if type == 'sad' %>
         <p class='alert alert-danger'><%= message %></p>
+      <% elsif type == 'happy' %>
+        <p class='alert alert-success'><%= message %></p>
       <% else %>
-        <p><%= message %></p>
+        <p>message</p>  
       <% end %>
     <% end %>
 
