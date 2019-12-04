@@ -4,7 +4,7 @@ RSpec.describe 'shelters show page', type: :feature do
 
   before :each do
     @shelter_1 = create :random_shelter
-    @reviews = create_list (:random_review, 5,  shelter: @shelter_1)
+    @reviews = create_list(:random_review, 5,  shelter: @shelter_1)
   end
 
 
@@ -29,6 +29,6 @@ RSpec.describe 'shelters show page', type: :feature do
       expect(page).to have_content(review.rating)
       expect(page).to have_content(review.content)
       expect(page).to have_content(review.created_at)
-    end   
+    end
   end
 end

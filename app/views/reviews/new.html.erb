@@ -4,8 +4,8 @@
  <%= form_tag "/shelters/#{@shelter_id}" do %>
     <%= label_tag :title %>
     <%= text_field_tag :title %><br>
-    <%= label_tag :comment %>
-    <%= text_area_tag :comment %><br>
+    <%= label_tag :content %>
+    <%= text_area_tag :content %><br>
     <%= label_tag :rating %>
     <%= select_tag :rating, options_for_select((1..5).to_a) %>
     <%= label_tag :image %>
