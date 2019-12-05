@@ -41,9 +41,14 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    Pet.destroy(params[:id])
-    redirect_to "/pets/"
-    flash[:happy] = 'Pet successfully deleted.'
+    if cookies[:favorites].include?(params[:id])
+      flash[:sad] = 'Remove pet from favorites before deleting.'
+      redirect_back fallback_location: '/pets/'
+    else
+      Pet.destroy(params[:id])
+      redirect_to "/pets/"
+      flash[:happy] = 'Pet successfully deleted.'
+    end
   end
 
   private
