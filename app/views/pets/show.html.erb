@@ -9,7 +9,7 @@
  <p>Adoption Status: <%= @pet.adoption_status %></p>
 <ul class='edit-delete'>
 <li><%= link_to "<button type='button' class='btn btn-primary'>Update Info</button>".html_safe, "/pets/#{@pet.id}/edit" %></li>
-<% if cookies[:favorites].include?(@pet.id.to_s) %>
+<% if session[:favorites].include?(@pet.id.to_s) %>
   <li><%= form_tag "/favorites/#{@pet.id}", method: :delete do %>
     <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %></li>
   <% end %>

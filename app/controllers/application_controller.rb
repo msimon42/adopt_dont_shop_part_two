@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :favorite_cookie
 
   def favorite_cookie
-    cookies[:favorites] ||= Array.new
-    @favorites = Favorite.new(cookies[:favorites])
-    @favorite_count = cookies[:favorites].split(',').uniq.length
+    session[:favorites] ||= Array.new
+    @favorites ||= Favorite.new(session[:favorites])
+    @favorite_count = session[:favorites].length
   end
 end
