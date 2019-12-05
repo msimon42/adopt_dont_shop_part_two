@@ -6,7 +6,7 @@ RSpec.describe 'pet show page', type: :feature do
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 2, shelter: @shelter_1)
   end
-    
+
   it 'can see pet info' do
 
     visit "/pets/#{@pets[0].id}"
@@ -26,6 +26,14 @@ RSpec.describe 'pet show page', type: :feature do
     expect(page).to have_content(@pets[1].approx_age)
     expect(page).to have_content(@pets[1].sex)
     expect(page).to have_content('Not available for adoption')
+  end
+
+  it 'can favorite pet' do
+    visit "/pets/#{@pets[0].id}"
+
+    click_button 'Add favorite'
+
+
   end
 
 end
