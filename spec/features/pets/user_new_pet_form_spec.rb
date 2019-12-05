@@ -2,7 +2,7 @@ RSpec.describe 'new pet form', type: :feature do
 
   before :each do
     @shelter_1 = create :random_shelter
-    @pet_1 = create :random_pet, shelter: @shelter_1
+
 
   end
 
@@ -10,21 +10,41 @@ RSpec.describe 'new pet form', type: :feature do
     visit "/shelters/#{@shelter_1.id}/pets/new"
 
     expect(page).to have_field('Name')
-    expect(page).to have_field('Image file')
+    expect(page).to have_field('Image')
     expect(page).to have_field('Description')
     expect(page).to have_field('Approx age')
     expect(page).to have_content('Male')
     expect(page).to have_content('Female')
 
-    fill_in 'Name', with: @pet_1.name
-    fill_in 'Image file', with: @pet_1.image
-    fill_in 'Description', with: @pet_1.description
-    fill_in 'Approx age', with: @pet_1.approx_age
-    choose  'gender', with: @pet_1.sex
+    fill_in 'Name', with: 'Coco'
+    fill_in 'Image', with: 'test.jpg'
+    fill_in 'Description', with: 'test 123'
+    fill_in 'Approx age', with: '1203423'
+    choose  'gender', with: 'Female'
 
     click_button 'Submit'
 
-    expect(current_path).to eq("/shelters/#{shelter_1.id}/pets")
-    expect(page).to have_content(@pet_1.name)
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+    expect(page).to have_content('Coco')
+  end
+
+  it 'renders error message when user fails to properly fill in form' do
+    visit "/shelters/#{@shelter_1.id}/pets/new"
+
+    expect(page).to have_field('Name')
+    expect(page).to have_field('Image')
+    expect(page).to have_field('Description')
+    expect(page).to have_field('Approx age')
+    expect(page).to have_content('Male')
+    expect(page).to have_content('Female')
+
+    fill_in 'Name', with: 'Coco'
+    fill_in 'Image', with: 'test.jpg'
+    fill_in 'Description', with: 'test 123'
+
+    click_button 'Submit'
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+    expect(page).to have_content('Failed to create pet. Be sure to provide all required information.')
   end
 end
