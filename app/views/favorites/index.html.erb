@@ -8,11 +8,14 @@
           <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
         </div>
         <li><%= form_tag "/favorites/#{pet.id}", method: :delete do %>
-          <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %></li>
+          <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %><li>
         <% end %>
       </div>
     <% end %>
   </div>
+  <li><%= form_tag "/favorites", method: :delete do %>
+  <%= submit_tag 'Remove All Favorite Pets', class: 'btn btn-warning' %></li>
+  <% end %>
 <% else %>
   <h2>You have no favorites :(</h2>
 <% end %>

@@ -9,6 +9,11 @@ class FavoritesController < ApplicationController
 
   end
 
+  def delete_all
+    cookies[:favorites] = ""
+    redirect_to "/favorites"
+  end
+
   def update
     pet_id = params[:pet_id]
     redirect_to "/pets/#{pet_id}"
