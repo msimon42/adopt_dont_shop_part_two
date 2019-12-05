@@ -2,7 +2,7 @@
 <h1>Shelters Index</h1>
 <% @shelters.each do |shelter| %>
   <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
-  <h5> Pets available: <%= shelter.pet_count %></h5>
+  <h5> Pets available: <%= shelter.pets.count %></h5>
   <ul class='edit-delete'>
   <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "shelters/#{shelter.id}/edit" %></li>
   <li><%= form_tag "/shelters/#{shelter.id}", method: :delete do %>
