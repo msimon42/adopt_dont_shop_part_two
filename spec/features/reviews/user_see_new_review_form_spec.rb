@@ -14,16 +14,16 @@ RSpec.describe 'new review form', type: :feature do
       zip: '80234'
     )
 
-    visit "/shelters/#{@shelter_1.id}/add-review"
+    visit "/shelters/#{@shelter_1.id}/new-review"
 
     expect(page).to have_field('Title')
-    expect(page).to have_field('Image file')
-    expect(page).to have_field('Comment')
+    expect(page).to have_field('Image')
+    expect(page).to have_field('Content')
     expect(page).to have_field('Rating')
 
     fill_in 'Title', with: 'A Terrible Experience with Terrible People'
-    fill_in 'Image file', with: 'pebbles.png'
-    fill_in 'Comment', with: 'When I entered the shelter, a woman by the name of Maud told me my nose was too big. Very bad form.'
+    fill_in 'Image', with: 'pebbles.png'
+    fill_in 'Content', with: 'When I entered the shelter, a woman by the name of Maud told me my nose was too big. Very bad form.'
     select 1, :from => :rating
 
     click_button 'Submit'
