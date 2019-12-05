@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    ids = cookies[:favorites].split(',').uniq
+    ids = session[:favorites]
     @favorited_pets = Pet.find(ids)
     @favorite_count = @favorited_pets.length
   end
@@ -10,21 +10,22 @@ class FavoritesController < ApplicationController
   end
 
   def delete_all
-    cookies[:favorites] = ""
+    session[:favorites] = Array.new
     redirect_to "/favorites"
   end
 
   def update
     pet_id = params[:pet_id]
     redirect_to "/pets/#{pet_id}"
-    cookies[:favorites] += "#{pet_id},"
+    @favorites.add(pet_id)
+    session[:favorites] = @favorites.pets
     flash[:happy] = 'Pet added to favorites.'
   end
 
   def destroy
     pet_id = params[:pet_id]
-    new_favorites = cookies[:favorites].gsub("#{pet_id},", '')
-    cookies[:favorites] = new_favorites
+    @favorites.remove(pet_id)
+    session[:favorites] = @favorites.pets
     redirect_back fallback_location: '/pets/'
     flash[:happy] = 'Pet Removed from Favorites.'
   end
