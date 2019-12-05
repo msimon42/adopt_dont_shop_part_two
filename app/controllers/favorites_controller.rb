@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
   def update
     pet_id = params[:pet_id]
     redirect_to "/pets/#{pet_id}"
-    cookies[:favorites] += "#{pet_id},"
+    @favorites.add(cookies[:favorites])
     flash[:happy] = 'Pet added to favorites.'
   end
 

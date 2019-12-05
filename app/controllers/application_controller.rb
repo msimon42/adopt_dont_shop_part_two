@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :favorite_cookie
 
   def favorite_cookie
-    cookies[:favorites] ||= ''
+    cookies[:favorites] ||= Array.new
+    @favorites = Favorite.new(cookies[:favorites])
     @favorite_count = cookies[:favorites].split(',').uniq.length
   end
 end
