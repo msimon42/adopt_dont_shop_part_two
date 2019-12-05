@@ -12,7 +12,6 @@ RSpec.describe 'pet show page', type: :feature do
     visit "/pets/#{@pets[0].id}"
 
     expect(page).to have_content(@pets[0].name)
-    expect(page).to have_css "img[src *= #{@pets[0].image}]"
     expect(page).to have_content(@pets[0].description)
     expect(page).to have_content(@pets[0].approx_age)
     expect(page).to have_content(@pets[0].sex)
@@ -21,18 +20,18 @@ RSpec.describe 'pet show page', type: :feature do
     visit "/pets/#{@pets[1].id}"
 
     expect(page).to have_content(@pets[1].name)
-    expect(page).to have_css "img[src *= #{@pets[1].image}]"
     expect(page).to have_content(@pets[1].description)
     expect(page).to have_content(@pets[1].approx_age)
     expect(page).to have_content(@pets[1].sex)
-    expect(page).to have_content('Not available for adoption')
+    expect(page).to have_content('Available for Adoption')
   end
 
   it 'can favorite pet' do
     visit "/pets/#{@pets[0].id}"
+    click_button 'Favorite'
 
-    click_button 'Add favorite'
-
+    page.has_button?('Remove from Favorites')
+    expect(page).to have_content('Favorites(1)')
 
   end
 
