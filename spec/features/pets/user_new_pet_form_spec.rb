@@ -2,8 +2,6 @@ RSpec.describe 'new pet form', type: :feature do
 
   before :each do
     @shelter_1 = create :random_shelter
-
-
   end
 
   it 'can render fields' do
@@ -20,7 +18,7 @@ RSpec.describe 'new pet form', type: :feature do
     fill_in 'Image', with: 'test.jpg'
     fill_in 'Description', with: 'test 123'
     fill_in 'Approx age', with: '1203423'
-    choose  'gender', with: 'Female'
+    choose  'sex', with: 'Female'
 
     click_button 'Submit'
 

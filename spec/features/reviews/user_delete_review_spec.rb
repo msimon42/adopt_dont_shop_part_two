@@ -7,7 +7,6 @@ RSpec.describe 'When a user clicks the delete button', type: :feature do
 
   it 'deletes the review' do
     visit "/shelters/#{@shelter_1.id}"
-
     within("#review-#{@reviews[0].id}") do
       click_button 'Delete'
     end

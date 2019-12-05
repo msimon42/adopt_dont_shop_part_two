@@ -16,7 +16,7 @@ RSpec.describe 'new shelter form' do
     fill_in 'State', with: 'CO'
     fill_in 'Zip', with: '80211'
 
-    click_on 'Submit'
+    click_on 'Create Shelter'
     new_shelter = Shelter.last
 
     expect(current_path).to eq('/shelters')

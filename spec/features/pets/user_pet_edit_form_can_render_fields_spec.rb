@@ -12,7 +12,7 @@ RSpec.describe 'edit pet form', type: :feature do
 
   end
 
-  it 'can render fields' do
+  it 'can render fields and edit pet' do
     visit "/pets/#{@pet_1.id}/edit"
 
     expect(page).to have_field('Name')
@@ -26,7 +26,7 @@ RSpec.describe 'edit pet form', type: :feature do
     click_button 'Submit'
 
     expect(current_path).to eq("/pets/#{@pet_1.id}")
-    expect(page).to have_content(@pet_1.approx_age)
-    expect(page).to have_content(@pet_1.description)
+    expect(page).to have_content('4')
+    expect(page).to have_content('Half breed golden retriever')
   end
 end
