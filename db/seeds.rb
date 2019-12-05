@@ -9,6 +9,7 @@ Review.destroy_all
 Shelter.destroy_all
 Pet.destroy_all
 
+
 shelters = [shelter_1 = Shelter.create(
   name: 'Shelter of Dog',
   address: '123 main street',
