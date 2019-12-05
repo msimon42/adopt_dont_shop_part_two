@@ -25,7 +25,7 @@
   </div>
  </div>
  <ul class='edit-delete'>
- <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "shelters/#{@shelter.id}/edit-review/#{review.id}" %></li>
+ <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "/shelters/#{@shelter.id}/edit-review/#{review.id}" %></li>
  <li><%= form_tag "/reviews/#{review.id}", method: :delete do %>
    <%= submit_tag 'Delete', class: 'btn btn-danger' %>
  <% end %></li></ul>
