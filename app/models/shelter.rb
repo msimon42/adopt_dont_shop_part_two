@@ -3,7 +3,4 @@ class Shelter < ApplicationRecord
   has_many :pets, :dependent => :destroy
   has_many :reviews, :dependent => :destroy
 
-  def pet_count
-    self.find_pets.count
-  end
 end
