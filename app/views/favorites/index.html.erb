@@ -1,11 +1,18 @@
 <h1>Favorites</h1>
-<div class='card-columns'>
-<% @favorited_pets.each do |pet| %>
-<div class="card" style="width: 22rem;">
-  <img class="card-img-top" src="<%= pet.image %>" alt="pet_image" style='height:300px;width:22rem'>
-  <div class="card-body">
-    <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
+<% if @favorited_pets.length > 0 %>
+  <div class='card-columns'>
+    <% @favorited_pets.each do |pet| %>
+      <div class="card" style="width: 22rem;">
+        <img class="card-img-top" src="<%= pet.image %>" alt="pet_image" style='height:300px;width:22rem'>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
+        </div>
+        <li><%= form_tag "/favorites/#{pet.id}", method: :delete do %>
+          <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %></li>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-</div>
+<% else %>
+  <h2>You have no favorites :(</h2>
 <% end %>
-</div>
