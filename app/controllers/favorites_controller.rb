@@ -15,4 +15,12 @@ class FavoritesController < ApplicationController
     cookies[:favorites] += "#{pet_id},"
     flash[:happy] = 'Pet added to favorites.'
   end
+
+  def destroy
+    pet_id = params[:pet_id]
+    new_favorites = cookies[:favorites].gsub("#{pet_id},", '')
+    cookies[:favorites] = new_favorites
+    redirect_back fallback_location: '/pets/'
+    flash[:happy] = 'Pet Removed from Favorites.'
+  end
 end
