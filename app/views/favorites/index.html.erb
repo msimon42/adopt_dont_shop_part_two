@@ -2,7 +2,7 @@
 <% if @favorited_pets.length > 0 %>
   <div class='card-columns'>
     <% @favorited_pets.each do |pet| %>
-      <div class="card" style="width: 22rem;">
+      <div class="card" style="width: 22rem;" id="favorite-pet-<%= pet.id %>">
         <img class="card-img-top" src="<%= pet.image %>" alt="pet_image" style='height:300px;width:22rem'>
         <div class="card-body">
           <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
