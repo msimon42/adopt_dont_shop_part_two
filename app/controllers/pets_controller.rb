@@ -12,14 +12,14 @@ class PetsController < ApplicationController
   end
 
   def create
-    @shelter = Shelter.find(params[:id])
-    pet = @shelter.pets.create(pet_params)
+    shelter = Shelter.find(params[:id])
+    pet = shelter.pets.create(pet_params)
     if pet.save
-      redirect_to "/shelters/#{@shelter.id}/pets"
-      flash[:happy] = "#{pet.name} has been successfully added to #{@shelter.name}."
+      redirect_to "/shelters/#{shelter.id}/pets"
+      flash[:happy] = "#{pet.name} has been successfully added to #{shelter.name}."
     else
       flash[:sad] = 'Failed to create pet. Be sure to provide all required information.'
-      render :new
+      redirect_back fallback_location: "/shelters/#{shelter.id}/pets"
     end
   end
 
