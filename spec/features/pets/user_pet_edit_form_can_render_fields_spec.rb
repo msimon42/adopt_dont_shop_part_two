@@ -16,7 +16,7 @@ RSpec.describe 'edit pet form', type: :feature do
     visit "/pets/#{@pet_1.id}/edit"
 
     expect(page).to have_field('Name')
-    expect(page).to have_field('Image file')
+    expect(page).to have_field('Image')
     expect(page).to have_field('Description')
     expect(page).to have_field('Approx age')
 
