@@ -36,7 +36,7 @@ class PetsController < ApplicationController
       flash[:happy] = "#{pet.name} has been successfully updated."
     else
       flash[:sad] = 'Failed to update pet. Be sure to provide all required information.'
-      render :new
+      redirect_back fallback_location: "/pets/#{pet.id}"
     end
   end
 
