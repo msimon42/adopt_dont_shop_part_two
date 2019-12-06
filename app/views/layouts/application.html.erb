@@ -34,6 +34,8 @@
         <p class='alert alert-danger'><%= message %></p>
       <% elsif type == 'happy' %>
         <p class='alert alert-success'><%= message %></p>
+      <% elsif type == 'secondary' %>
+          <p class='alert alert-dark'><%= message %></p>
       <% else %>
         <p>message</p>
       <% end %>
