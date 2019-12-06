@@ -41,7 +41,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    if cookies[:favorites].include?(params[:id])
+    if session[:favorites].include?(params[:id])
       flash[:sad] = 'Remove pet from favorites before deleting.'
       redirect_back fallback_location: '/pets/'
     else
