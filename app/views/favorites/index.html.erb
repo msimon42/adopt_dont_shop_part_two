@@ -13,6 +13,9 @@
       </div>
     <% end %>
   </div>
+  <div id='application-button'>
+  <p id='actual-button'><%= link_to "<button type='button' class='btn btn-success'>Apply for Pets</button>".html_safe, "/application/new" %></p>
+  </div>
   <li><%= form_tag "/favorites", method: :delete do %>
   <%= submit_tag 'Remove All Favorite Pets', class: 'btn btn-warning' %></li>
   <% end %>

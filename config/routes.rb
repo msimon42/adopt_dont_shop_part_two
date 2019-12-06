@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   patch '/favorites/:pet_id', to: 'favorites#update'
   delete '/favorites/:pet_id', to: 'favorites#destroy'
   delete '/favorites', to: 'favorites#delete_all'
+  get '/application/new', to: 'petapplications#new'
 end
 
 #ask meg about line 28
