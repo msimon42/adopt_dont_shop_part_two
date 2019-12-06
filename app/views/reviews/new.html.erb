@@ -10,6 +10,11 @@
     <%= select_tag :rating, options_for_select((1..5).to_a) %>
     <%= label_tag :image %>
     <%= text_field_tag :image %><br>
+    <%= @favorited_pets.each do |pet| %>
+    <% binding.pry %>
+      <%= check_box :pets, { multiple: true }, pet, false %>
+      <%= label pet %>
+    <% end %>
     <%= submit_tag 'Submit', class: 'btn btn-success' %>
     <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter_id}" %>
   <% end %>
