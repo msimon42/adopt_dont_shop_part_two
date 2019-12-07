@@ -22,3 +22,10 @@
 <% else %>
   <h2>You have no favorites :(</h2>
 <% end %>
+
+<h2>Pets Applied For</h2>
+<ul>
+<% @applied_pets.each do |pet| %>
+  <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
+<% end %>
+</ul>
