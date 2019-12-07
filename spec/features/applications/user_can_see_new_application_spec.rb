@@ -26,9 +26,9 @@ RSpec.describe 'When a user visits the application show page' do
     expect(page).to have_content(@application.state)
     expect(page).to have_content(@application.zip)
     expect(page).to have_content(@application.description)
-    expect(page).to have_content(@pet[0].name)
+    expect(page).to have_content(@pets[0].name)
 
-    click_on @pet[0].name
+    click_on @pets[0].name
     expect(current_path).to eq("/pets/#{@pets[0].id}")
   end
 
