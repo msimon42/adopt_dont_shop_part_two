@@ -31,5 +31,3 @@ Rails.application.routes.draw do
   get '/application/:id', to: 'petapplications#show'
   get '/pets/:id/applications', to: 'petapplications#index'
 end
-
-#ask meg about line 28
