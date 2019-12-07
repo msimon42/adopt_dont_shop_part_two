@@ -25,7 +25,7 @@ RSpec.describe 'shelter pets index', type: :feature do
       name: 'Fido',
       approx_age: 3,
       sex: 'male',
-      adoptable?: true
+      adoption_status: "adoptable"
       )
 
     pet_2 = Pet.create(
@@ -35,7 +35,7 @@ RSpec.describe 'shelter pets index', type: :feature do
       description: 'tst dogg',
       approx_age: 3,
       sex: 'Female',
-      adoptable?: true
+      adoption_status: "adoptable"
       )
 
     pet_3 = Pet.create(
@@ -45,7 +45,7 @@ RSpec.describe 'shelter pets index', type: :feature do
       description: 'tst dogg',
       approx_age: 3,
       sex: 'Male',
-      adoptable?: true
+      adoption_status: "adoptable"
       )
 
     visit "/shelters/#{shelter_1.id}/pets"

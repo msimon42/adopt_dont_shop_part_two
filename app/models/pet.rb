@@ -12,5 +12,4 @@ class Pet < ApplicationRecord
   def self.with_applications
     joins(:applications)
   end
-
 end
