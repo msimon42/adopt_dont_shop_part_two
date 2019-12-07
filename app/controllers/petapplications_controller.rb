@@ -34,6 +34,10 @@ class PetapplicationsController < ApplicationController
     @applications = pet.applications
   end
 
+  def update
+    
+  end
+
   private
 
   def application_params
