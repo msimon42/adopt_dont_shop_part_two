@@ -5,6 +5,6 @@ FactoryBot.define do
     image {Faker::LoremFlickr.image(search_terms: [Faker::Creature::Animal.name])}
     approx_age {rand(10).to_i}
     sex {Faker::Creature::Dog.gender}
-    adoptable? {true}
+    adoption_status {"adoptable"}
   end
 end

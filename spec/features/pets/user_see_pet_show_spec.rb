@@ -15,7 +15,7 @@ RSpec.describe 'pet show page', type: :feature do
     expect(page).to have_content(@pets[0].description)
     expect(page).to have_content(@pets[0].approx_age)
     expect(page).to have_content(@pets[0].sex)
-    expect(page).to have_content('Available for Adoption')
+    expect(page).to have_content('adoptable')
 
     visit "/pets/#{@pets[1].id}"
 
@@ -23,7 +23,7 @@ RSpec.describe 'pet show page', type: :feature do
     expect(page).to have_content(@pets[1].description)
     expect(page).to have_content(@pets[1].approx_age)
     expect(page).to have_content(@pets[1].sex)
-    expect(page).to have_content('Available for Adoption')
+    expect(page).to have_content('adoptable')
   end
 
   it 'can favorite pet' do
