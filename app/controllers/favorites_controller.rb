@@ -2,6 +2,7 @@ class FavoritesController < ApplicationController
   def index
     ids = session[:favorites]
     @favorited_pets = Pet.find(ids)
+    @applied_pets = Pet.with_applications.distinct
     @favorite_count = @favorited_pets.length
   end
 
