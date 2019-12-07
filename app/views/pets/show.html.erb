@@ -1,4 +1,3 @@
-
 <h1><%= @pet.name %></h1>
 
  <img src="<%= @pet.image %>" alt="pet_image" style="width:200px;height:300px">
@@ -19,5 +18,7 @@
   <% end %>
 <% end %>
 <li><%= form_tag "/pets/#{@pet.id}", method: :delete do %>
-  <%= submit_tag 'Delete', class: 'btn btn-danger' %></li></ul>
-<% end %>
+      <%= submit_tag 'Delete', class: 'btn btn-danger' %></li>
+    <% end %>
+<li><%= link_to "<button type='button' class='btn btn-secondary'>View Applications</button>".html_safe, "/pets/#{@pet.id}/applications" %></li>
+</ul>  
