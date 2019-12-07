@@ -9,3 +9,8 @@
   <li>Phone Number: <%= @application.phone_number %></li>
   <li>Description: <%= @application.description %></li>
 </ul>
+
+<h3>Pets Applied For</h3>
+<% @pets.each do |pet| %>
+    <%= link_to pet.name, "/pets/#{pet.id}" %>
+<% end %>
