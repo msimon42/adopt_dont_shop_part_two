@@ -18,8 +18,9 @@
   <ul>
   <% @favorited_pets.each do |pet| %>
     <li>
-      <%= label_tag pet %>
-      <%= check_box(:pet, pet) %>
+
+      <%= label_tag pet[1] %>
+      <%= check_box(:pet, pet[0], class: "pet-#{pet[0]}" )%>
     </li>
   <% end %>
   </ul>
