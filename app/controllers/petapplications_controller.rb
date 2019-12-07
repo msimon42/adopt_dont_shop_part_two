@@ -23,6 +23,11 @@ class PetapplicationsController < ApplicationController
     end
   end
 
+  def show
+    @application = Application.find(params[:id])
+    @pets = @application.pets
+  end
+
   private
 
   def application_params
