@@ -1,13 +1,17 @@
-<h1>Edit Pet Info</h1>
-<%= form_tag "/pets/#{@pet.id}", method: :patch do %>
+<header>
+  <h1>Edit Pet Info</h1>
+</header>
+<%= form_tag "/pets/#{@pet.id}", method: :patch, class: 'new-edit-form rounded' do %>
   <%= label_tag :name %>
-  <%= text_field_tag :name, @pet.name %><br>
+  <%= text_field_tag :name, @pet.name, class: "form-control" %>
   <%= label_tag :image %>
-  <%= text_field_tag :image, @pet.image %><br>
+  <%= text_field_tag :image, @pet.image, class: "form-control" %>
   <%= label_tag :description %>
-  <%= text_field_tag :description, @pet.description %><br>
+  <%= text_field_tag :description, @pet.description, class: "form-control" %>
   <%= label_tag :approx_age %>
-  <%= text_field_tag :approx_age, @pet.approx_age %><br>
-  <%= submit_tag 'Submit', class: 'btn btn-success' %>
-  <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/pets/#{@pet.id}" %>
+  <%= text_field_tag :approx_age, @pet.approx_age, class: "form-control" %>
+  <div class='form-buttons'>
+    <%= submit_tag 'Submit', class: 'btn btn-success' %>
+    <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/pets/#{@pet.id}" %>
+  <div>
 <% end %>

@@ -1,29 +1,30 @@
-<h1>New Pets Application</h1>
-<%= form_tag "/favorites" do %>
+<header>
+  <h1>New Pets Application</h1>
+</header>
+<%= form_tag "/favorites", class: 'new-edit-form' do %>
   <%= label_tag :name %>
-  <%= text_field_tag :name %><br>
+  <%= text_field_tag :name,'', class: 'form-control' %>
   <%= label_tag :address %>
-  <%= text_field_tag :address %><br>
+  <%= text_field_tag :address,'', class: 'form-control' %>
   <%= label_tag :city %>
-  <%= text_field_tag :city %><br>
+  <%= text_field_tag :city,'', class: 'form-control' %>
   <%= label_tag :state %>
-  <%= text_field_tag :state %><br>
+  <%= text_field_tag :state,'', class: 'form-control' %>
   <%= label_tag :zip %>
-  <%= text_field_tag :zip %><br>
+  <%= text_field_tag :zip,'', class: 'form-control' %>
   <%= label_tag :phone_number %>
-  <%= text_field_tag :phone_number %><br>
+  <%= text_field_tag :phone_number,'', class: 'form-control' %>
   <%= label_tag :description %>
-  <%= text_area_tag :description %><br>
+  <%= text_area_tag :description,'', class: 'form-control' %><br>
   <%= label_tag "Select Pets" %>
-  <ul>
+  <div class='form-check'>
   <% @favorited_pets.each do |pet| %>
-    <li>
-
       <%= label_tag pet[1] %>
-      <%= check_box(:pet, pet[0], class: "pet-#{pet[0]}" )%>
-    </li>
+      <%= check_box(:pet, pet[0], class: "pet-#{pet[0]}" )%><br>
   <% end %>
-  </ul>
-  <%= submit_tag 'Submit', class: 'btn btn-success' %>
+  </div>
+  <div class='form-buttons'>
+    <%= submit_tag 'Submit', class: 'btn btn-success' %>
+    <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/favorites" %>
+  </div>
 <% end %>
-<%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/favorites" %>

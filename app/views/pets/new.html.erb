@@ -1,16 +1,19 @@
-
-<h1>Add Pet</h1>
-<%= form_tag "/shelters/#{@shelter.id}/pets" do %>
+<header>
+  <h1>Add Pet</h1>
+</header>
+<%= form_tag "/shelters/#{@shelter.id}/pets", class: 'new-edit-form rounded' do %>
   <%= label_tag :name %>
-  <%= text_field_tag :name %><br>
+  <%= text_field_tag :name,'', class: "form-control" %>
   <%= label_tag :image %>
-  <%= text_field_tag :image %><br>
+  <%= text_field_tag :image,'', class: "form-control"  %>
   <%= label_tag :description %>
-  <%= text_field_tag :description %><br>
+  <%= text_field_tag :description,'', class: "form-control"  %>
   <%= label_tag :approx_age %>
-  <%= text_field_tag :approx_age %><br>
+  <%= text_field_tag :approx_age,'', class: "form-control"  %>
   <p> Male: <%= radio_button_tag 'sex', 'Male' %>
   Female: <%= radio_button_tag 'sex', 'Female' %></p>
-  <%= submit_tag 'Submit', class: 'btn btn-success' %>
+  <div class='form-buttons'>
+    <%= submit_tag 'Submit', class: 'btn btn-success' %>
+    <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter.id}/pets" %>
+  </div>
 <% end %>
-<%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter.id}/pets" %>

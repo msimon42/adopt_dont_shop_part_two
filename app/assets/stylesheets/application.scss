@@ -15,17 +15,23 @@
  */
 @import "bootstrap";
 html {
-  background-color: #b5eeff
+  background-color: #9BD770
 
 }
 
 body {
-  background-color: #b5eeff
+  background-color: #9BD770
 }
 
 header {
-  background-color: #f20d0d;
-  color: #FFDEDB;
+  background-color: #9BD770;
+  text-align: center;
+  color: #375F1B;
+}
+
+.navbar-color{
+  background-color: #375F1B;
+
 }
 
 .edit-delete {
@@ -58,15 +64,91 @@ header {
    padding-left: 20px;
 }
 
-#shelter-show {
+.pet-show {
+  position: absolute;
+  top: 10%;
+  left: 33%;
+  text-align: center;
+  padding: 5px;
+  background-color: #EBF7E3;
+}
+
+.pet-index {
+  padding: 5px;
+  text-align: center;
+  background-color: #EBF7E3
+}
+
+.new-edit-form {
+  position: absolute;
+  width: 25rem;
+  top: 20%;
+  left: 35%;
+  text-align: left;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  background-color: #EBF7E3;
+}
+
+.shelters-index {
+  text-align: center;
+  padding: 5px;
+}
+
+.form-buttons {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.shelter-element {
+  padding: 5px;
+  margin: 10px;
+}
+
+.shelter-element a {
+  color: #375F1B;
+}
+
+.shelter-show{
+  text-align: center;
   list-style: none;
+}
+
+.add-button {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.applied-pets {
+  list-style: none;
+  font-size: 25px;
+  text-align: center;
+}
+
+.applied-pets a {
+  color: #375F1B;
 }
 
 #reviews-header {
   margin-top: 20px;
   margin-left: 50px;
+  text-align: center;
+  font-size: 35px;
+  color: #375F1B;
 }
 
 #rating {
   font-size: 15px;
+}
+
+#startpage {
+  background-color: #EBF7E3;
+  text-align: center;
+  color: #375F1B;
+}
+
+#shelter-info {
+  list-style: none;
 }

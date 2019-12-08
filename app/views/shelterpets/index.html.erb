@@ -5,11 +5,11 @@
 <% @shelter_pets.each do |pet| %>
 <div class="card" style="width: 22rem;">
   <img class="card-img-top" src="<%= pet.image %>" alt="pet_image" style='height:300px;width:22rem'>
-  <div class="card-body">
+  <div class="card-body pet-index">
     <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
     <p class="card-text">Sex: <%= pet.sex %></p>
     <p class="card-text">Location: <%= link_to pet.shelter_name, "/shelters/#{pet.shelter_id}" %></p>
-    <p><%= link_to "<button type='button' class='btn btn-primary'>Learn More</button>".html_safe, "/pets/#{pet.id}" %></p>
+    <p><%= link_to "<button type='button' class='btn btn-dark navbar-color'>Learn More</button>".html_safe, "/pets/#{pet.id}" %></p>
     <ul class='edit-delete'>
     <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "/pets/#{pet.id}/edit" %></li>
     <li><%= form_tag "/pets/#{pet.id}", method: :delete do %>
@@ -19,4 +19,4 @@
 </div>
 <% end %>
 </div>
-<%= link_to "<button type='button' class='btn btn-primary'>Add New Pet</button>".html_safe, "/shelters/#{@shelter.id}/pets/new" %>
+<%= link_to "<button type='button' class='btn btn-dark navbar-color'>Add New Pet</button>".html_safe, "/shelters/#{@shelter.id}/pets/new" %>
