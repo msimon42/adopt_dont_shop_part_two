@@ -1,6 +1,6 @@
 <header>
   <h1>New Pets Application</h1>
-</header>  
+</header>
 <%= form_tag "/favorites" do %>
   <%= label_tag :name %>
   <%= text_field_tag :name %><br>
@@ -20,7 +20,6 @@
   <ul>
   <% @favorited_pets.each do |pet| %>
     <li>
-
       <%= label_tag pet[1] %>
       <%= check_box(:pet, pet[0], class: "pet-#{pet[0]}" )%>
     </li>

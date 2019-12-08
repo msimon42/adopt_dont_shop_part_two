@@ -1,7 +1,9 @@
 <header>
   <h1>Shelters Index</h1>
-</header>  
+</header>
+<div class='shelters-index'>
 <% @shelters.each do |shelter| %>
+  <div class='shelter-element'>
   <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
   <h5> Pets available: <%= shelter.pets.count %></h5>
   <ul class='edit-delete'>
@@ -9,6 +11,10 @@
   <li><%= form_tag "/shelters/#{shelter.id}", method: :delete do %>
     <%= submit_tag 'Delete', class: 'btn btn-danger' %>
   <% end %></li></ul>
+  </div>
 <% end %>
+</div>
 <br>
-<%= link_to "<button type='button' class='btn btn-primary'>Add New Shelter</button>".html_safe, "/shelters/new" %>
+<div id='add-shelter-button'>
+  <%= link_to "<button type='button' class='btn btn-dark navbar-color btn-lg'>Add New Shelter</button>".html_safe, "/shelters/new" %>
+</div>
