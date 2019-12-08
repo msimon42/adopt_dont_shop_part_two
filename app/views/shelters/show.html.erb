@@ -1,7 +1,8 @@
 <header>
   <h1><%= @shelter.name %></h1>
-</header>  
-<ul id='shelter-show'>
+</header>
+<div class='shelter-show'>
+<ul id='shelter-info'>
   <li>Address: <%= @shelter.address %></li>
   <li>City: <%= @shelter.city %></li>
   <li>State: <%= @shelter.state %></li>
@@ -13,7 +14,7 @@
 <li><%= form_tag "/shelters/#{@shelter.id}", method: :delete do %>
   <%= submit_tag 'Delete', class: 'btn btn-danger' %></li></ul>
 <% end %>
-
+</div>
 <h3 id='reviews-header'>Reviews</h3>
 <% @reviews.each do |review| %>
   <div class="media review" id="review-<%= review.id %>">
@@ -32,4 +33,4 @@
  <% end %></li></ul>
  </div>
  <% end %>
-<%= link_to "<button type='button' class='btn btn-primary'>Add a Review</button>".html_safe, "/shelters/#{@shelter.id}/new-review" %>
+<%= link_to "<button type='button' class='btn btn-dark navbar-color add-button'>Add a Review</button>".html_safe, "/shelters/#{@shelter.id}/new-review" %>
