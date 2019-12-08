@@ -1,23 +1,25 @@
-<h1>Favorites</h1>
+<header>
+  <h1>Favorites</h1>
+</header>  
 <% if @favorited_pets.length > 0 %>
   <div class='card-columns'>
     <% @favorited_pets.each do |pet| %>
       <div class="card" style="width: 22rem;" id="favorite-pet-<%= pet.id %>">
         <img class="card-img-top" src="<%= pet.image %>" alt="pet_image" style='height:300px;width:22rem'>
-        <div class="card-body">
+        <div class="card-body favorite-show">
           <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
+          <%= form_tag "/favorites/#{pet.id}", method: :delete do %>
+            <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %>
+          <% end %>
         </div>
-        <li><%= form_tag "/favorites/#{pet.id}", method: :delete do %>
-          <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %><li>
-        <% end %>
       </div>
     <% end %>
   </div>
   <div id='application-button'>
   <p id='actual-button'><%= link_to "<button type='button' class='btn btn-success'>Apply for Pets</button>".html_safe, "/application/new" %></p>
   </div>
-  <li><%= form_tag "/favorites", method: :delete do %>
-  <%= submit_tag 'Remove All Favorite Pets', class: 'btn btn-warning' %></li>
+  <%= form_tag "/favorites", method: :delete do %>
+    <%= submit_tag 'Remove All Favorite Pets', class: 'btn btn-warning' %>
   <% end %>
 <% else %>
   <h2>You have no favorites :(</h2>
