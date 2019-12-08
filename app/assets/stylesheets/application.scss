@@ -91,10 +91,23 @@ header {
   background-color: #EBF7E3;
 }
 
+.shelters-index {
+  text-align: center;
+  padding: 5px;
+}
 
 .form-buttons {
   margin-top: 5px;
   text-align: center;
+}
+
+.shelter-element {
+  padding: 5px;
+  margin: 10px;
+}
+
+.shelter-element a {
+  color: #375F1B;
 }
 
 #shelter-show {
@@ -114,4 +127,8 @@ header {
   background-color: #EBF7E3;
   text-align: center;
   color: #375F1B;
+}
+
+#add-shelter-button {
+  text-align: center;
 }
