@@ -1,3 +1,4 @@
+<div class='pet-show'>
 <h1><%= @pet.name %></h1>
 
  <img src="<%= @pet.image %>" alt="pet_image" style="width:200px;height:300px">
@@ -8,7 +9,7 @@
  <p>Adoption Status: <%= @pet.adoption_status %></p>
  <% if @pet.adoptor_name %>
     <p>On hold for <%= @pet.adoptor_name %></p>
-  <% end %>   
+  <% end %>
 <ul class='edit-delete'>
 <li><%= link_to "<button type='button' class='btn btn-primary'>Update Info</button>".html_safe, "/pets/#{@pet.id}/edit" %></li>
 <% if session[:favorites].include?(@pet.id.to_s) %>
@@ -25,3 +26,4 @@
     <% end %>
 <li><%= link_to "<button type='button' class='btn btn-secondary'>View Applications</button>".html_safe, "/pets/#{@pet.id}/applications" %></li>
 </ul>
+</div>
