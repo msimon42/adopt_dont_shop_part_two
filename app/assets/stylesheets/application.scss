@@ -79,6 +79,24 @@ header {
   background-color: #EBF7E3
 }
 
+.new-edit-form {
+  position: absolute;
+  width: 25rem;
+  top: 20%;
+  left: 35%;
+  text-align: left;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #EBF7E3;
+}
+
+
+.form-buttons {
+  margin-top: 5px;
+  text-align: center;
+}
+
 #shelter-show {
   list-style: none;
 }
