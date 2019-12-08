@@ -6,6 +6,9 @@
  <p>Approximate age: <%= @pet.approx_age %></p>
  <p>Sex: <%= @pet.sex %></p>
  <p>Adoption Status: <%= @pet.adoption_status %></p>
+ <% if @pet.adoptor_name %>
+    <p>On hold for <%= @pet.adoptor_name %></p>
+  <% end %>   
 <ul class='edit-delete'>
 <li><%= link_to "<button type='button' class='btn btn-primary'>Update Info</button>".html_safe, "/pets/#{@pet.id}/edit" %></li>
 <% if session[:favorites].include?(@pet.id.to_s) %>
@@ -21,4 +24,4 @@
       <%= submit_tag 'Delete', class: 'btn btn-danger' %></li>
     <% end %>
 <li><%= link_to "<button type='button' class='btn btn-secondary'>View Applications</button>".html_safe, "/pets/#{@pet.id}/applications" %></li>
-</ul>  
+</ul>
