@@ -25,7 +25,6 @@ body {
 
 header {
   background-color: #9BD770;
-  color: #FFDEDB;
   text-align: center;
   color: #375F1B;
 }
@@ -74,7 +73,7 @@ header {
   background-color: #EBF7E3;
 }
 
-.favorite-show {
+.pet-index {
   padding: 5px;
   text-align: center;
   background-color: #EBF7E3
@@ -91,4 +90,10 @@ header {
 
 #rating {
   font-size: 15px;
+}
+
+#startpage {
+  background-color: #EBF7E3;
+  text-align: center;
+  color: #375F1B;
 }

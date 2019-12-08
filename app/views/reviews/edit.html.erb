@@ -1,5 +1,8 @@
-<div class = 'new-edit-form'>
+
+<header>
   <h1>Edit Review</h1>
+</header>
+<div class = 'new-edit-form'>
   <%= form_tag "/reviews/#{@review.id}", method: :patch do %>
      <%= label_tag :title %>
      <%= text_field_tag :title, @review.title %><br>

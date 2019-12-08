@@ -1,4 +1,6 @@
-<h1>Edit Pet Info</h1>
+<header>
+  <h1>Edit Pet Info</h1>
+</header>  
 <%= form_tag "/pets/#{@pet.id}", method: :patch do %>
   <%= label_tag :name %>
   <%= text_field_tag :name, @pet.name %><br>

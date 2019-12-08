@@ -1,5 +1,6 @@
-
-<h1>Shelters Index</h1>
+<header>
+  <h1>Shelters Index</h1>
+</header>  
 <% @shelters.each do |shelter| %>
   <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
   <h5> Pets available: <%= shelter.pets.count %></h5>
