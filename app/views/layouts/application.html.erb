@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-color" >
       <a class="navbar-brand" href="/">Pet Adoption Center</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
             <a class="nav-link" href="/pets">Pets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/favorites">Favorites(<%= @favorite_count %>)</a>
+            <a class="nav-link" href="/favorites">Favorites <span class='badge badge-light'><%= @favorite_count %></span></a>
           </li>
         </ul>
       </div>
