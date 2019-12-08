@@ -30,5 +30,5 @@ Rails.application.routes.draw do
   post '/favorites', to: 'petapplications#create'
   get '/application/:id', to: 'petapplications#show'
   get '/pets/:id/applications', to: 'petapplications#index'
-  patch '/pets/:id/applications', to: 'petapplications#update'
+  patch '/pets/:id/:app_id', to: 'petapplications#update'
 end

@@ -35,7 +35,10 @@ class PetapplicationsController < ApplicationController
   end
 
   def update
-    
+    pet = Pet.find(params[:id])
+
+    pet.update(adoption_status: 'pending')
+    redirect_to "/pets/#{pet.id}"
   end
 
   private

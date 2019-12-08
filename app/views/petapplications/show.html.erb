@@ -14,7 +14,7 @@
 <ul>
 <% @pets.each do |pet| %>
     <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
-    <li><%= form_tag "/pets/#{pet.id}/applications", method: :patch do %>
+    <li><%= form_tag "/pets/#{pet.id}/#{@application.id}", method: :patch do %>
       <%= submit_tag 'Approve Pet Application', class: 'btn btn-success' %></li>
     <% end %>
 <% end %>
