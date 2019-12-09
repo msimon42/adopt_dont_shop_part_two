@@ -20,17 +20,11 @@ RSpec.describe 'When a user visits a pet show page', type: :feature do
   it 'has a button to view all applications' do
     visit "/pets/#{@pets[0].id}"
 
-    expect(page).to have_button('View Applications')
-    click_button 'View Applications'
+    expect(page).to have_link('View Applications')
+    click_link 'View Applications'
     expect(current_path).to eq("/pets/#{@pets[0].id}/applications")
     expect(page).to have_content(@application.name)
     click_on @application.name
     expect(current_path).to eq("/application/#{@application.id}")
-  end
-
-  it "has message saying there are no applications" do
-    visit "pets/#{@pets[1].id}/applications"
-
-    expect(page).to have_content("No Applications :(")
   end
 end
