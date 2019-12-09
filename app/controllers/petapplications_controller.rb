@@ -39,9 +39,9 @@ class PetapplicationsController < ApplicationController
     application = Application.find(params[:app_id])
     if !pet.adopter_id
       pet.update(adoption_status: 'pending',
-      adopter_id: application.name)
+      adopter_id: application.id)
       redirect_to "/pets/#{pet.id}"
-    elsif pet.adopter_id != application.name
+    elsif pet.adopter_id != application.id.to_s
       flash[:sad] = "Sorry, this pet is on hold for someone better."
       redirect_to "/application/#{application.id}"
     else

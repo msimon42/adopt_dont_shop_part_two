@@ -15,7 +15,7 @@
 <ul class='edit-delete'>
 <% @pets.each do |pet| %>
     <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
-    <% if pet.adopter_id == @application.name %>
+    <% if pet.adopter_id == @application.id.to_s %>
       <li><%= form_tag "/pets/#{pet.id}/#{@application.id}", method: :patch do %>
         <%= submit_tag 'Revoke Application', class: 'btn btn-danger' %></li>
       <% end %>
