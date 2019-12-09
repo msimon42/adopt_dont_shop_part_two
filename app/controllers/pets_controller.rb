@@ -5,6 +5,9 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    if @pet.adopter_id
+      @adopter_name = @pet.adopter_name
+    end   
   end
 
   def new

@@ -10,6 +10,10 @@ class Pet < ApplicationRecord
   end
 
   def self.with_applications
-    joins(:applications)
+    joins(:applications).distinct
+  end
+
+  def adopter_name
+    Application.find(self.adopter_id).name
   end
 end

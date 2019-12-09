@@ -28,10 +28,8 @@ RSpec.describe 'When a user visits a pet show page', type: :feature do
       expect(page).to have_button("Approve Pet Application")
       visit "/pets/#{@pets[0].id}"
 
-      expect(page).to_not have_content("On hold for #{@pets[0].adoptor_name}")
-
-      
-  end
+      expect(page).to_not have_content("On hold for #{@pets[0].adopter_id}")
+   end
 
 
 end

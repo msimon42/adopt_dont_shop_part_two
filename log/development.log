@@ -690,3 +690,684 @@ Processing by FavoritesController#index as HTML
 Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1432206992544472830)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAdoptorNameToAdoptorId (20191209222227)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1432206992544472830)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1432206992544472830)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAdoptorNameToAdoptorId (20191209222227)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1432206992544472830)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1432206992544472830)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAdoptorNameToAdopterId (20191209222558)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "pets" RENAME COLUMN "adoptor_name" TO "adopter_id"[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209222558"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1432206992544472830)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 376]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 377]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 378]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 361]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 362]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 363]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 364]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 365]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 366]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 367]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 368]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 369]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 370]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 371]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 372]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 373]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 374]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 375]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 379]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 380]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 381]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 382]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 383]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 384]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 385]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 386]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 387]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 388]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 389]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 390]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 391]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 392]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 393]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 394]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 395]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 396]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 397]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 398]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 399]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 400]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 401]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 402]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 403]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 404]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 405]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 406]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 407]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 408]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 409]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 410]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 56]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 575]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 576]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 577]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 578]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 579]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 580]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 581]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 582]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 583]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 584]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 585]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 586]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 587]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 588]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 589]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 56]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "shelters" WHERE "shelters"."id" = $1[0m  [["id", 56]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 57]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 590]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 591]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 592]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 593]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 594]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 595]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 596]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 597]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 598]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 599]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 603]]
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 604]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 57]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 590]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 591]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 592]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 593]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 594]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 595]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 596]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 597]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 598]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 599]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 603]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 604]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 602]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 601]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 600]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 57]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "shelters" WHERE "shelters"."id" = $1[0m  [["id", 57]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 58]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 605]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 606]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 607]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 608]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 609]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 610]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 611]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 612]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 613]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 614]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 615]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 617]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 618]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 619]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 58]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "shelters" WHERE "shelters"."id" = $1[0m  [["id", 58]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 59]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 620]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 621]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 622]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 623]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 624]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 625]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 626]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 627]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 628]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 629]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 630]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 631]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 632]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 633]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 634]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 59]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "shelters" WHERE "shelters"."id" = $1[0m  [["id", 59]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 60]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 635]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 636]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 637]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 638]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 639]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 640]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 641]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 642]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 643]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 644]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 645]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 646]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 647]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 648]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 649]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 60]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "shelters" WHERE "shelters"."id" = $1[0m  [["id", 60]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Shelter of Dog"], ["address", "123 main street"], ["city", "Denver"], ["state", "CO"], ["zip", "80234"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Animal Center"], ["address", "123 Way St"], ["city", "Denver"], ["state", "CO"], ["zip", "80444"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "DogLand"], ["address", "123 Broadway"], ["city", "Denver"], ["state", "CO"], ["zip", "80848"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Center of Pets"], ["address", "123 Colfax"], ["city", "Denver"], ["state", "CO"], ["zip", "80218"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Animal Shelter"], ["address", "123 Denver Street"], ["city", "Denver"], ["state", "CO"], ["zip", "80244"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/beaver"], ["name", "Cooper"], ["description", "big ol' pupper"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/ape"], ["name", "Cooper"], ["description", "big ol' pupper"], ["approx_age", "9"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/dog"], ["name", "Sadie"], ["description", "smol pupperino"], ["approx_age", "9"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/oyster"], ["name", "Lady"], ["description", "boop the snoot"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/minnow"], ["name", "Maggie"], ["description", "they're good dogs Brent"], ["approx_age", "9"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/grasshopper"], ["name", "Casey"], ["description", "zoom"], ["approx_age", "7"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/llama"], ["name", "Oreo"], ["description", "long boi"], ["approx_age", "5"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/worm"], ["name", "Sammy"], ["description", "big ol' pupper"], ["approx_age", "5"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/fly"], ["name", "Sandy"], ["description", "11/10"], ["approx_age", "3"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/mosquito"], ["name", "Teddy"], ["description", "big ol' pupper"], ["approx_age", "0"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/hamster"], ["name", "Sam"], ["description", "11/10"], ["approx_age", "3"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/locust"], ["name", "Jasper"], ["description", "boop the snoot"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/locust"], ["name", "Princess"], ["description", "11/10"], ["approx_age", "8"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/worm"], ["name", "Lily"], ["description", "heck no pal"], ["approx_age", "8"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/fox"], ["name", "Bella"], ["description", "smol pupperino"], ["approx_age", "4"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 61]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Let me tell ya"], ["rating", 2], ["content", "Often people, especially computer engineers, focus on the machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines."], ["image", "https://loremflickr.com/300/300/neutra,meggings,+1"], ["created_at", "2019-12-09 18:27:09.407393"], ["updated_at", "2019-12-09 22:29:10.578704"], ["shelter_id", 61]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My boss gonna fire me"], ["rating", 3], ["content", "From the viewpoint of what you can do, therefore, languages do differ - but the differences are limited. For example, Python and Ruby provide almost the same power to the programmer."], ["image", "https://loremflickr.com/300/300/bitters,humblebrag,asymmetrical"], ["created_at", "2019-12-09 11:23:49.415290"], ["updated_at", "2019-12-09 22:29:10.580805"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That damn gimble"], ["rating", 4], ["content", "Because of the Turing completeness theory, everything one Turing-complete language can do can theoretically be done by another Turing-complete language, but at a different cost. You can do everything in assembler, but no one wants to program in assembler anymore."], ["image", "https://loremflickr.com/300/300/cray,kickstarter,etsy"], ["created_at", "2019-12-09 14:10:53.318814"], ["updated_at", "2019-12-09 22:29:10.582403"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "No one tells me shit"], ["rating", 4], ["content", "Often people, especially computer engineers, focus on the machines. But in fact we need to focus on humans, on how humans care about doing programming or operating the application of the machines."], ["image", "https://loremflickr.com/300/300/biodiesel,chicharrones,everyday"], ["created_at", "2019-12-09 05:25:36.043772"], ["updated_at", "2019-12-09 22:29:10.584175"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Might be DQ time"], ["rating", 0], ["content", "People are different. People choose different criteria. But if there is a better way among many alternatives, I want to encourage that way by making it comfortable. So that's what I've tried to do."], ["image", "https://loremflickr.com/300/300/sustainable,church-key,YOLO"], ["created_at", "2019-12-09 20:58:57.894016"], ["updated_at", "2019-12-09 22:29:10.585989"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Contact the tower"], ["rating", 2], ["content", "From the viewpoint of what you can do, therefore, languages do differ - but the differences are limited. For example, Python and Ruby provide almost the same power to the programmer."], ["image", "https://loremflickr.com/300/300/bitters,synth,pour-over"], ["created_at", "2019-12-09 18:27:09.801789"], ["updated_at", "2019-12-09 22:29:10.587815"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My buddy Harlen"], ["rating", 2], ["content", "The orthogonal features, when combined, can explode into complexity."], ["image", "https://loremflickr.com/300/300/quinoa,squid,disrupt"], ["created_at", "2019-12-09 05:10:24.129024"], ["updated_at", "2019-12-09 22:29:10.589544"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "No one tells me shit"], ["rating", 2], ["content", "Imagine you are writing an email. You are in front of the computer. You are operating the computer, clicking a mouse and typing on a keyboard, but the message will be sent to a human over the internet. So you are working before the computer, but with a human behind the computer."], ["image", "https://loremflickr.com/300/300/PBR&B,kickstarter,truffaut"], ["created_at", "2019-12-08 22:49:31.495231"], ["updated_at", "2019-12-09 22:29:10.591385"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That Barbala couldn't fly his way out of a wet paper bag"], ["rating", 1], ["content", "The orthogonal features, when combined, can explode into complexity."], ["image", "https://loremflickr.com/300/300/kickstarter,knausgaard,gluten-free"], ["created_at", "2019-12-08 23:36:13.670079"], ["updated_at", "2019-12-09 22:29:10.593170"], ["shelter_id", 61]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "C'mon Naomi"], ["rating", 3], ["content", "Smart people underestimate the ordinarity of ordinary people."], ["image", "https://loremflickr.com/300/300/polaroid,XOXO,organic"], ["created_at", "2019-12-09 03:14:31.216485"], ["updated_at", "2019-12-09 22:29:10.594692"], ["shelter_id", 61]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/chinchilla"], ["name", "Angel"], ["description", "mlem"], ["approx_age", "5"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/koala"], ["name", "Bailey"], ["description", "thicc doggo"], ["approx_age", "1"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/shark"], ["name", "Scooter"], ["description", "big ol' pupper"], ["approx_age", "5"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/wallaby"], ["name", "Sugar"], ["description", "zoom"], ["approx_age", "1"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/butterfly"], ["name", "Bo"], ["description", "thicc doggo"], ["approx_age", "5"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/reindeer"], ["name", "Sophie"], ["description", "blep"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/mammoth"], ["name", "Gizmo"], ["description", "smol pupperino"], ["approx_age", "4"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/dinosaur"], ["name", "Penny"], ["description", "boop the snoot"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/pug"], ["name", "Lola"], ["description", "thicc doggo"], ["approx_age", "3"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/porcupine"], ["name", "Shelby"], ["description", "11/10"], ["approx_age", "2"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/platypus"], ["name", "Sophie"], ["description", "11/10"], ["approx_age", "3"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/turtle "], ["name", "Gizmo"], ["description", "long boi"], ["approx_age", "6"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/snail"], ["name", "Tank"], ["description", "they're good dogs Brent"], ["approx_age", "5"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/alligator"], ["name", "Taz"], ["description", "boop the snoot"], ["approx_age", "5"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/prairie dog"], ["name", "Sassy"], ["description", "thicc doggo"], ["approx_age", "6"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "No one tells me shit"], ["rating", 0], ["content", "Everyone has an individual background. Someone may come from Python, someone else may come from Perl, and they may be surprised by different aspects of the language. Then they come up to me and say, 'I was surprised by this feature of the language, so therefore Ruby violates the principle of least surprise.' Wait. Wait. The principle of least surprise is not for you only."], ["image", "https://loremflickr.com/300/300/paleo,yr,whatever"], ["created_at", "2019-12-09 16:04:54.576997"], ["updated_at", "2019-12-09 22:29:10.617316"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Like a red-headed stepchild"], ["rating", 2], ["content", "I believe consistency and orthogonality are tools of design, not the primary goal in design."], ["image", "https://loremflickr.com/300/300/intelligentsia,tattooed,butcher"], ["created_at", "2019-12-08 23:47:13.495343"], ["updated_at", "2019-12-09 22:29:10.618761"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That goddamn Datamate"], ["rating", 0], ["content", "Most programs are not write-once. They are reworked and rewritten again and again in their lived. Bugs must be debugged. Changing requirements and the need for increased functionality mean the program itself may be modified on an ongoing basis. During this process, human beings must be able to read and understand the original code. It is therefore more important by far for humans to be able to understand the program than it is for the computer."], ["image", "https://loremflickr.com/300/300/vice,gastropub,meggings"], ["created_at", "2019-12-09 13:58:25.134568"], ["updated_at", "2019-12-09 22:29:10.620480"], ["shelter_id", 62]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "No one tells me shit"], ["rating", 1], ["content", "Most of the tasks we do are for humans. For example, a tax calculation is counting numbers so the government can pull money out from my wallet, but government consists of humans."], ["image", "https://loremflickr.com/300/300/chillwave,DIY,carry"], ["created_at", "2019-12-09 17:39:39.651603"], ["updated_at", "2019-12-09 22:29:10.622364"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "I got that scurvy"], ["rating", 1], ["content", "Imagine you are writing an email. You are in front of the computer. You are operating the computer, clicking a mouse and typing on a keyboard, but the message will be sent to a human over the internet. So you are working before the computer, but with a human behind the computer."], ["image", "https://loremflickr.com/300/300/cronut,actually,semiotics"], ["created_at", "2019-12-09 13:21:19.195001"], ["updated_at", "2019-12-09 22:29:10.623893"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Got depression, Smith and Wessen"], ["rating", 1], ["content", "Ruby inherited the Perl philosophy of having more than one way to do the same thing. I inherited that philosophy from Larry Wall, who is my hero actually. I want to make Ruby users free. I want to give them the freedom to choose."], ["image", "https://loremflickr.com/300/300/flexitarian,bespoke,mumblecore"], ["created_at", "2019-12-09 05:13:46.666311"], ["updated_at", "2019-12-09 22:29:10.625269"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Contact the tower"], ["rating", 4], ["content", "Everyone has an individual background. Someone may come from Python, someone else may come from Perl, and they may be surprised by different aspects of the language. Then they come up to me and say, 'I was surprised by this feature of the language, so therefore Ruby violates the principle of least surprise.' Wait. Wait. The principle of least surprise is not for you only."], ["image", "https://loremflickr.com/300/300/retro,mustache,echo"], ["created_at", "2019-12-09 21:50:33.582971"], ["updated_at", "2019-12-09 22:29:10.626793"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That damn diabetes"], ["rating", 3], ["content", "In our daily lives as programmers, we process text strings a lot. So I tried to work hard on text processing, namely the string class and regular expressions. Regular expressions are built into the language and are very tuned up for use."], ["image", "https://loremflickr.com/300/300/disrupt,cornhole,poutine"], ["created_at", "2019-12-09 12:16:59.857477"], ["updated_at", "2019-12-09 22:29:10.628292"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "I want my damn cart back"], ["rating", 4], ["content", "Most programs are not write-once. They are reworked and rewritten again and again in their lived. Bugs must be debugged. Changing requirements and the need for increased functionality mean the program itself may be modified on an ongoing basis. During this process, human beings must be able to read and understand the original code. It is therefore more important by far for humans to be able to understand the program than it is for the computer."], ["image", "https://loremflickr.com/300/300/VHS,cliche,chicharrones"], ["created_at", "2019-12-09 05:43:53.770382"], ["updated_at", "2019-12-09 22:29:10.629703"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "It's around here somewhere"], ["rating", 4], ["content", "The orthogonal features, when combined, can explode into complexity."], ["image", "https://loremflickr.com/300/300/meditation,umami,asymmetrical"], ["created_at", "2019-12-09 01:35:08.196133"], ["updated_at", "2019-12-09 22:29:10.630994"], ["shelter_id", 62]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/locust"], ["name", "Annie"], ["description", "11/10"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/cricket"], ["name", "Roxy"], ["description", "big ol' pupper"], ["approx_age", "1"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/mosquito"], ["name", "Tyson"], ["description", "smol pupperino"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/snail"], ["name", "Maggie"], ["description", "long boi"], ["approx_age", "4"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/weasel"], ["name", "Bandit"], ["description", "blep"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/whale"], ["name", "Bear"], ["description", "big ol' pupper"], ["approx_age", "6"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/grasshopper"], ["name", "Daisy"], ["description", "big ol' pupper"], ["approx_age", "4"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/toad"], ["name", "Snoopy"], ["description", "11/10"], ["approx_age", "5"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/dolphin"], ["name", "Lexi"], ["description", "they're good dogs Brent"], ["approx_age", "2"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/mammoth"], ["name", "Peanut"], ["description", "boop the snoot"], ["approx_age", "5"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/crab"], ["name", "Rex"], ["description", "zoom"], ["approx_age", "5"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/locust"], ["name", "Rascal"], ["description", "thicc doggo"], ["approx_age", "2"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/seal"], ["name", "Bubba"], ["description", "11/10"], ["approx_age", "6"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/bee"], ["name", "Dixie"], ["description", "11/10"], ["approx_age", "0"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/minnow"], ["name", "Maggie"], ["description", "smol pupperino"], ["approx_age", "1"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My boss gonna fire me"], ["rating", 4], ["content", "I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language."], ["image", "https://loremflickr.com/300/300/disrupt,humblebrag,try-hard"], ["created_at", "2019-12-09 22:15:17.988203"], ["updated_at", "2019-12-09 22:29:10.664361"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Goin' hog huntin'"], ["rating", 3], ["content", "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too."], ["image", "https://loremflickr.com/300/300/artisan,ethical,ethical"], ["created_at", "2019-12-09 13:54:58.523390"], ["updated_at", "2019-12-09 22:29:10.666022"], ["shelter_id", 63]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "I'm washing my hands of it"], ["rating", 4], ["content", "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too."], ["image", "https://loremflickr.com/300/300/lo-fi,locavore,keffiyeh"], ["created_at", "2019-12-09 22:19:27.267388"], ["updated_at", "2019-12-09 22:29:10.667585"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Y'all never listen to me"], ["rating", 2], ["content", "I didn't work hard to make Ruby perfect for everyone, because you feel differently from me. No language can be perfect for everyone. I tried to make Ruby perfect for me, but maybe it's not perfect for you. The perfect language for Guido van Rossum is probably Python."], ["image", "https://loremflickr.com/300/300/park,roof,master"], ["created_at", "2019-12-09 00:20:13.323893"], ["updated_at", "2019-12-09 22:29:10.669388"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "No one tells me shit"], ["rating", 4], ["content", "People are different. People choose different criteria. But if there is a better way among many alternatives, I want to encourage that way by making it comfortable. So that's what I've tried to do."], ["image", "https://loremflickr.com/300/300/tattooed,echo,mlkshk"], ["created_at", "2019-12-09 13:20:11.732646"], ["updated_at", "2019-12-09 22:29:10.671013"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Turd gone wrong"], ["rating", 4], ["content", "Ruby inherited the Perl philosophy of having more than one way to do the same thing. I inherited that philosophy from Larry Wall, who is my hero actually. I want to make Ruby users free. I want to give them the freedom to choose."], ["image", "https://loremflickr.com/300/300/iPhone,master,authentic"], ["created_at", "2019-12-09 12:59:18.712090"], ["updated_at", "2019-12-09 22:29:10.672669"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "So I was walking Oscar"], ["rating", 3], ["content", "Most of the tasks we do are for humans. For example, a tax calculation is counting numbers so the government can pull money out from my wallet, but government consists of humans."], ["image", "https://loremflickr.com/300/300/whatever,disrupt,crucifix"], ["created_at", "2019-12-09 17:49:17.056831"], ["updated_at", "2019-12-09 22:29:10.674415"], ["shelter_id", 63]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Yup"], ["rating", 1], ["content", "Because of the Turing completeness theory, everything one Turing-complete language can do can theoretically be done by another Turing-complete language, but at a different cost. You can do everything in assembler, but no one wants to program in assembler anymore."], ["image", "https://loremflickr.com/300/300/mlkshk,tacos,Yuccie"], ["created_at", "2019-12-09 16:11:00.252458"], ["updated_at", "2019-12-09 22:29:10.676083"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That's messed up"], ["rating", 3], ["content", "Ruby inherited the Perl philosophy of having more than one way to do the same thing. I inherited that philosophy from Larry Wall, who is my hero actually. I want to make Ruby users free. I want to give them the freedom to choose."], ["image", "https://loremflickr.com/300/300/wolf,scenester,YOLO"], ["created_at", "2019-12-09 15:30:18.033904"], ["updated_at", "2019-12-09 22:29:10.677850"], ["shelter_id", 63]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That damn diabetes"], ["rating", 1], ["content", "The orthogonal features, when combined, can explode into complexity."], ["image", "https://loremflickr.com/300/300/readymade,hella,dreamcatcher"], ["created_at", "2019-12-09 07:55:58.893033"], ["updated_at", "2019-12-09 22:29:10.679413"], ["shelter_id", 63]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/eagle"], ["name", "Belle"], ["description", "boop the snoot"], ["approx_age", "4"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/rabbit"], ["name", "Sugar"], ["description", "heck no pal"], ["approx_age", "7"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/fox"], ["name", "Mia"], ["description", "boop the snoot"], ["approx_age", "0"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/kangaroo"], ["name", "Rascal"], ["description", "blep"], ["approx_age", "4"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/panda"], ["name", "Sassy"], ["description", "they're good dogs Brent"], ["approx_age", "2"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/toad"], ["name", "Rascal"], ["description", "heck no pal"], ["approx_age", "3"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/wombat"], ["name", "Angel"], ["description", "blep"], ["approx_age", "5"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/cockroach"], ["name", "Sadie"], ["description", "long boi"], ["approx_age", "6"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/seal"], ["name", "Daisy"], ["description", "mlem"], ["approx_age", "3"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/marten"], ["name", "Sasha"], ["description", "blep"], ["approx_age", "4"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/mule"], ["name", "Gizmo"], ["description", "big ol' pupper"], ["approx_age", "2"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/dolphin"], ["name", "Honey"], ["description", "they're good dogs Brent"], ["approx_age", "2"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/rat"], ["name", "Zeus"], ["description", "boop the snoot"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/mole"], ["name", "Marley"], ["description", "thicc doggo"], ["approx_age", "2"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/cod"], ["name", "Rosie"], ["description", "long boi"], ["approx_age", "0"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 64]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "So I was walking Oscar"], ["rating", 1], ["content", "Because of the Turing completeness theory, everything one Turing-complete language can do can theoretically be done by another Turing-complete language, but at a different cost. You can do everything in assembler, but no one wants to program in assembler anymore."], ["image", "https://loremflickr.com/300/300/master,pickled,austin"], ["created_at", "2019-12-09 15:31:49.655793"], ["updated_at", "2019-12-09 22:29:10.703469"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "C'mon Naomi"], ["rating", 3], ["content", "You want to enjoy life, don't you? If you get your job done quickly and your job is fun, that's good isn't it? That's the purpose of life, partly. Your life is better."], ["image", "https://loremflickr.com/300/300/shoreditch,wayfarers,paleo"], ["created_at", "2019-12-09 03:09:27.532799"], ["updated_at", "2019-12-09 22:29:10.705564"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Texas!"], ["rating", 2], ["content", "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too."], ["image", "https://loremflickr.com/300/300/vinyl,swag,typewriter"], ["created_at", "2019-12-09 16:02:04.648663"], ["updated_at", "2019-12-09 22:29:10.707626"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Always the last one to the party"], ["rating", 4], ["content", "The orthogonal features, when combined, can explode into complexity."], ["image", "https://loremflickr.com/300/300/lumbersexual,tattooed,locavore"], ["created_at", "2019-12-08 22:41:55.711677"], ["updated_at", "2019-12-09 22:29:10.709423"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Y'all never listen to me"], ["rating", 4], ["content", "Language designers want to design the perfect language. They want to be able to say, 'My language is perfect. It can do everything.' But it's just plain impossible to design a perfect language, because there are two ways to look at a language. One way is by looking at what can be done with that language. The other is by looking at how we feel using that language-how we feel while programming."], ["image", "https://loremflickr.com/300/300/irony,intelligentsia,vegan"], ["created_at", "2019-12-09 04:12:31.186017"], ["updated_at", "2019-12-09 22:29:10.711085"], ["shelter_id", 64]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "How 'bout them Cowboys"], ["rating", 1], ["content", "Actually, I didn't make the claim that Ruby follows the principle of least surprise. Someone felt the design of Ruby follows that philosophy, so they started saying that. I didn't bring that up, actually."], ["image", "https://loremflickr.com/300/300/truffaut,pop-up,keffiyeh"], ["created_at", "2019-12-09 11:08:56.061948"], ["updated_at", "2019-12-09 22:29:10.713572"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Y'all never listen to me"], ["rating", 1], ["content", "The orthogonal features, when combined, can explode into complexity."], ["image", "https://loremflickr.com/300/300/sriracha,XOXO,readymade"], ["created_at", "2019-12-09 19:02:36.913365"], ["updated_at", "2019-12-09 22:29:10.715411"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That goddamn Datamate"], ["rating", 1], ["content", "Sometimes people jot down pseudo-code on paper. If that pseudo-code runs directly on their computers, its best, isn't it? Ruby tries to be like that, like pseudo-code that runs. Python people say that too."], ["image", "https://loremflickr.com/300/300/mumblecore,venmo,neutra"], ["created_at", "2019-12-09 10:26:59.270005"], ["updated_at", "2019-12-09 22:29:10.716970"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Always the last one to the party"], ["rating", 1], ["content", "From the viewpoint of what you can do, therefore, languages do differ - but the differences are limited. For example, Python and Ruby provide almost the same power to the programmer."], ["image", "https://loremflickr.com/300/300/chicharrones,bitters,DIY"], ["created_at", "2019-12-09 03:17:12.004421"], ["updated_at", "2019-12-09 22:29:10.718465"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "It's around here somewhere"], ["rating", 1], ["content", "Ruby inherited the Perl philosophy of having more than one way to do the same thing. I inherited that philosophy from Larry Wall, who is my hero actually. I want to make Ruby users free. I want to give them the freedom to choose."], ["image", "https://loremflickr.com/300/300/fixie,lomo,pitchfork"], ["created_at", "2019-12-09 18:02:03.761137"], ["updated_at", "2019-12-09 22:29:10.719986"], ["shelter_id", 64]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/camel"], ["name", "Dakota"], ["description", "they're good dogs Brent"], ["approx_age", "2"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/fish"], ["name", "Roxie"], ["description", "boop the snoot"], ["approx_age", "9"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/cricket"], ["name", "Riley"], ["description", "boop the snoot"], ["approx_age", "3"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/dinosaur"], ["name", "Lilly"], ["description", "they're good dogs Brent"], ["approx_age", "2"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/wolf"], ["name", "Princess"], ["description", "thicc doggo"], ["approx_age", "7"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/squirrel"], ["name", "Bandit"], ["description", "mlem"], ["approx_age", "0"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/beaver"], ["name", "Diesel"], ["description", "big ol' pupper"], ["approx_age", "6"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/jellyfish"], ["name", "Riley"], ["description", "smol pupperino"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/bear"], ["name", "Coco"], ["description", "heck no pal"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/hornet"], ["name", "Gizmo"], ["description", "heck no pal"], ["approx_age", "9"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/otter"], ["name", "Chico"], ["description", "smol pupperino"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/goose"], ["name", "Missy"], ["description", "long boi"], ["approx_age", "7"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/gnat"], ["name", "Precious"], ["description", "zoom"], ["approx_age", "2"], ["sex", "Female"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/bee"], ["name", "Max"], ["description", "boop the snoot"], ["approx_age", "8"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "description", "approx_age", "sex", "adoption_status", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["image", "https://loremflickr.com/300/300/snake"], ["name", "Rex"], ["description", "heck no pal"], ["approx_age", "8"], ["sex", "Male"], ["adoption_status", "adoptable"], ["shelter_id", 65]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That damn gimble"], ["rating", 0], ["content", "I believe consistency and orthogonality are tools of design, not the primary goal in design."], ["image", "https://loremflickr.com/300/300/quinoa,polaroid,organic"], ["created_at", "2019-12-09 06:24:10.712034"], ["updated_at", "2019-12-09 22:29:10.740581"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "I got that scurvy"], ["rating", 2], ["content", "I didn't work hard to make Ruby perfect for everyone, because you feel differently from me. No language can be perfect for everyone. I tried to make Ruby perfect for me, but maybe it's not perfect for you. The perfect language for Guido van Rossum is probably Python."], ["image", "https://loremflickr.com/300/300/phlogiston,everyday,meh"], ["created_at", "2019-12-09 04:31:22.943825"], ["updated_at", "2019-12-09 22:29:10.741937"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "It's around here somewhere"], ["rating", 2], ["content", "People are different. People choose different criteria. But if there is a better way among many alternatives, I want to encourage that way by making it comfortable. So that's what I've tried to do."], ["image", "https://loremflickr.com/300/300/kombucha,cleanse,vinegar"], ["created_at", "2019-12-09 06:10:42.254275"], ["updated_at", "2019-12-09 22:29:10.743165"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Turd gone wrong"], ["rating", 4], ["content", "I hope to see Ruby help every programmer in the world to be productive, and to enjoy programming, and to be happy. That is the primary purpose of Ruby language."], ["image", "https://loremflickr.com/300/300/pug,park,cleanse"], ["created_at", "2019-12-09 08:56:11.644907"], ["updated_at", "2019-12-09 22:29:10.744408"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Texas!"], ["rating", 4], ["content", "It is not the responsibility of the language to force good looking code, but the language should make good looking code possible."], ["image", "https://loremflickr.com/300/300/cleanse,sriracha,vegan"], ["created_at", "2019-12-09 10:25:47.799822"], ["updated_at", "2019-12-09 22:29:10.745620"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That damn Bill Stull"], ["rating", 3], ["content", "Most of the tasks we do are for humans. For example, a tax calculation is counting numbers so the government can pull money out from my wallet, but government consists of humans."], ["image", "https://loremflickr.com/300/300/stumptown,mumblecore,sriracha"], ["created_at", "2019-12-09 13:55:09.205441"], ["updated_at", "2019-12-09 22:29:10.746882"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "So I was walking Oscar"], ["rating", 3], ["content", "In our daily lives as programmers, we process text strings a lot. So I tried to work hard on text processing, namely the string class and regular expressions. Regular expressions are built into the language and are very tuned up for use."], ["image", "https://loremflickr.com/300/300/mixtape,salvia,taxidermy"], ["created_at", "2019-12-09 04:04:38.850706"], ["updated_at", "2019-12-09 22:29:10.748204"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "How 'bout them Cowboys"], ["rating", 0], ["content", "Plant a memory, plant a tree, do it today for tomorrow."], ["image", "https://loremflickr.com/300/300/sriracha,etsy,salvia"], ["created_at", "2019-12-09 07:58:22.860060"], ["updated_at", "2019-12-09 22:29:10.749563"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Goin' hog huntin'"], ["rating", 1], ["content", "I believe that the purpose of life is, at least in part, to be happy. Based on this belief, Ruby is designed to make programming not only easy but also fun. It allows you to concentrate on the creative side of programming, with less stress."], ["image", "https://loremflickr.com/300/300/meditation,bitters,hoodie"], ["created_at", "2019-12-09 05:32:33.335902"], ["updated_at", "2019-12-09 22:29:10.750959"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "image", "created_at", "updated_at", "shelter_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My boss gonna fire me"], ["rating", 1], ["content", "Actually, I didn't make the claim that Ruby follows the principle of least surprise. Someone felt the design of Ruby follows that philosophy, so they started saying that. I didn't bring that up, actually."], ["image", "https://loremflickr.com/300/300/mumblecore,biodiesel,tumblr"], ["created_at", "2019-12-09 12:20:20.167836"], ["updated_at", "2019-12-09 22:29:10.752266"], ["shelter_id", 65]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
