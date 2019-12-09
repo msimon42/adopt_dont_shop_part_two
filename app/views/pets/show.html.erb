@@ -24,6 +24,6 @@
 <li><%= form_tag "/pets/#{@pet.id}", method: :delete do %>
       <%= submit_tag 'Delete', class: 'btn btn-danger' %></li>
     <% end %>
-<li><%= link_to "<button type='button' class='btn btn-secondary'>View Applications</button>".html_safe, "/pets/#{@pet.id}/applications" %></li>
+<li><%= link_to 'View Applications', "/pets/#{@pet.id}/applications", class: 'btn btn-secondary' %></li>
 </ul>
 </div>
