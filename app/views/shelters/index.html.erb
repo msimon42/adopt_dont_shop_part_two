@@ -4,13 +4,12 @@
 <div class='shelters-index'>
 <% @shelters.each do |shelter| %>
   <div class='shelter-element'>
-  <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
-  <h5> Pets available: <%= shelter.pets.count %></h5>
-  <ul class='edit-delete'>
-  <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "shelters/#{shelter.id}/edit" %></li>
-  <li><%= form_tag "/shelters/#{shelter.id}", method: :delete do %>
-    <%= submit_tag 'Delete', class: 'btn btn-danger' %>
-  <% end %></li></ul>
+    <h3> <%= link_to shelter.name, "/shelters/#{shelter.id}" %></h3>
+    <h5> Pets available: <%= shelter.pets.count %></h5>
+    <ul class='edit-delete'>
+      <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "shelters/#{shelter.id}/edit" %></li>
+      <li><%= button_to 'Delete', "/shelters/#{shelter.id}", method: :delete, class: 'btn btn-danger' %></li>
+    </ul>
   </div>
 <% end %>
 </div>
