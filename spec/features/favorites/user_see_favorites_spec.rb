@@ -20,7 +20,7 @@ RSpec.describe 'When I visit the favorites index page', type: :feature do
     click_on 'Favorite'
 
     expect(page).to have_content('Pet added to favorites.')
-    expect(page).to have_content('Favorites(1)')
+    expect(page).to have_content('Favorites 1')
     expect(page).to have_button('Remove Favorite')
 
 
@@ -30,7 +30,7 @@ RSpec.describe 'When I visit the favorites index page', type: :feature do
     click_on 'Favorite'
 
     expect(page).to have_content('Pet added to favorites.')
-    expect(page).to have_content('Favorites(2)')
+    expect(page).to have_content('Favorites 2')
     expect(page).to have_button('Remove Favorite')
 
 
@@ -40,14 +40,14 @@ RSpec.describe 'When I visit the favorites index page', type: :feature do
     click_on 'Favorite'
 
     expect(page).to have_content('Pet added to favorites.')
-    expect(page).to have_content('Favorites(3)')
+    expect(page).to have_content('Favorites 3')
     expect(page).to have_button('Remove Favorite')
 
 
     click_on 'Remove Favorite'
 
     expect(page).to have_button('Favorite')
-    expect(page).to have_content('Favorites(2)')
+    expect(page).to have_content('Favorites 2')
 
     visit "/favorites"
 

@@ -27,4 +27,10 @@ RSpec.describe 'When a user visits a pet show page', type: :feature do
     click_on @application.name
     expect(current_path).to eq("/application/#{@application.id}")
   end
+
+  it "has message saying there are no applications" do
+    visit "pets/#{@pets[1].id}/applications"
+
+    expect(page).to have_content("No Applications :(")
+  end
 end
