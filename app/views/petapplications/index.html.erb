@@ -1,10 +1,10 @@
 <header>
   <h1>Applications for <%= @pet_name %></h1>
-</header>  
+</header>
 <% if @applications.length > 0 %>
   <ul>
     <% @applications.each do |application| %>
-      <l1><%= link_to application.name, "/application/#{application.id}" %></li>
+      <li><%= link_to application.name, "/application/#{application.id}" %></li>
     <% end %>
   </ul>
 <% else %>
