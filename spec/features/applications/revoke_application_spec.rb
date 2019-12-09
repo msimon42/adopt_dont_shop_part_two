@@ -18,17 +18,16 @@ RSpec.describe 'When a user visits a pet show page', type: :feature do
   end
 
   it "has a button to revoke a pet's application" do
-      visit "/applications/#{@application.id}"
-
+      visit "/application/#{@application.id}"
+      click_button 'Approve Pet Application'
+      visit "/application/#{@application.id}"
       expect(page).to have_button('Revoke Application')
       click_button 'Revoke Application'
       expect(current_path).to eq("/application/#{@application.id}")
-      expect(page).to_not have_content("Revoke Application")
-      expect(page).to have_content("Apply for Pet")
+      expect(page).to have_button("Approve Pet Application")
+      visit "/pets/#{@pets[0].id}"
 
-      visit "/pets/#{@pets.id}"
-
-      expect(page).to_not have_content("On hold for #{adoptor_name}")
+      expect(page).to_not have_content("On hold for #{@pets[0].adoptor_name}")
   end
 
 
