@@ -37,9 +37,14 @@ class PetapplicationsController < ApplicationController
   def update
     pet = Pet.find(params[:id])
     application = Application.find(params[:app_id])
-    pet.update(adoption_status: 'pending',
-    adoptor_name: application.name)
-    redirect_to "/pets/#{pet.id}"
+    if !pet.adoptor_name
+      pet.update(adoption_status: 'pending',
+      adoptor_name: application.name)
+      redirect_to "/pets/#{pet.id}"
+    else
+      flash[:sad] = "Sorry, this pet is on hold for someone better."
+      redirect_back fallback_location: "/application/#{application.id}"
+    end
   end
 
   private
