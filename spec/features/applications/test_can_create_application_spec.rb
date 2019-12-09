@@ -44,7 +44,7 @@ RSpec.describe 'When a user clicks the submit button', type: :feature do
     click_button 'Submit'
 
     expect(current_path).to eq('/application/new')
-    expect(page).to have_content('Error: Application not submitted. Please fill all fields. ')
+    expect(page).to have_content('Error: Application not submitted. Please fill all fields.')
 
 
   end
