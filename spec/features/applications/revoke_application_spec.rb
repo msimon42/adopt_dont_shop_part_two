@@ -18,6 +18,7 @@ RSpec.describe 'When a user visits a pet show page', type: :feature do
   end
 
   it "has a button to revoke a pet's application" do
+
       visit "/application/#{@application.id}"
       click_button 'Approve Pet Application'
       visit "/application/#{@application.id}"
@@ -28,6 +29,8 @@ RSpec.describe 'When a user visits a pet show page', type: :feature do
       visit "/pets/#{@pets[0].id}"
 
       expect(page).to_not have_content("On hold for #{@pets[0].adoptor_name}")
+
+      
   end
 
 
