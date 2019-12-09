@@ -30,4 +30,22 @@ RSpec.describe 'When a user clicks the submit button', type: :feature do
     expect(page).to have_content('Favorites 1')
 
   end
+
+  it 'form will be rejected if empty fields' do
+    visit '/application/new'
+
+    fill_in 'Name', with: 'Test'
+    fill_in 'Address', with: 'Test'
+    fill_in 'City', with: 'Test'
+    fill_in 'State', with: 'Test'
+    fill_in 'Zip', with: 'Test'
+    fill_in 'Phone number', with: 'Test'
+
+    click_button 'Submit'
+
+    expect(current_path).to eq('/application/new')
+    expect(page).to have_content('Error: Application not submitted. Please fill all fields. ')
+
+
+  end
 end
