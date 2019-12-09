@@ -41,10 +41,19 @@ class PetapplicationsController < ApplicationController
       pet.update(adoption_status: 'pending',
       adoptor_name: application.name)
       redirect_to "/pets/#{pet.id}"
-    else
+    elsif pet.adoptor_name != application.name
       flash[:sad] = "Sorry, this pet is on hold for someone better."
       redirect_back fallback_location: "/application/#{application.id}"
+    else
+      pet.update(adoption_status: 'Available',
+                 adoptor_name: nil)
+      flash[:happy] = 'Application Revoked.'
+      redirect_back fallback_location: "/application/#{application.id}"             
     end
+  end
+
+  def destroy
+    binding.pry
   end
 
   private
