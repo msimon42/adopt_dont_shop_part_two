@@ -31,7 +31,7 @@ RSpec.describe 'pet show page', type: :feature do
     click_button 'Favorite'
 
     page.has_button?('Remove from Favorites')
-    expect(page).to have_content('Favorites(1)')
+    expect(page).to have_content('Favorites 1')
 
   end
 

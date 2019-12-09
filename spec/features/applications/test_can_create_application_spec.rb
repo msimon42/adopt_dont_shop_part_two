@@ -27,7 +27,7 @@ RSpec.describe 'When a user clicks the submit button', type: :feature do
     click_button 'Submit'
 
     expect(current_path).to eq('/favorites')
-    expect(page).to have_content('Favorites(1)')
-    
+    expect(page).to have_content('Favorites 1')
+
   end
 end
