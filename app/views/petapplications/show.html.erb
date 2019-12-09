@@ -16,12 +16,13 @@
 <% @pets.each do |pet| %>
     <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
     <% if pet.adoptor_name == @application.name %>
-      <li<%= form_tag "/pets/#{pet.id}/#{@application.id}", method: :patch do %>
+      <li><%= form_tag "/pets/#{pet.id}/#{@application.id}", method: :patch do %>
         <%= submit_tag 'Revoke Application', class: 'btn btn-danger' %></li>
       <% end %>
     <% else %>
       <li><%= form_tag "/pets/#{pet.id}/#{@application.id}", method: :patch do %>
         <%= submit_tag 'Approve Pet Application', class: 'btn btn-success' %></li>
       <% end %>
+    <% end %>
 <% end %>
 </ul>
