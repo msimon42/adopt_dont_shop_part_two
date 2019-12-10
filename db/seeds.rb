@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Review.destroy_all
 Shelter.destroy_all
+Application.destroy_all
 Pet.destroy_all
+PetApplication.destroy_all
 
 
 shelters = [shelter_1 = Shelter.create(
