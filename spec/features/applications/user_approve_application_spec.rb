@@ -35,6 +35,7 @@ RSpec.describe "As a visitor" do
 
     expect(current_path).to eq("/pets/#{@pets[1].id}")
     expect(page).to have_content("Pending")
+
     expect(page).to have_content("On hold for #{@application[0].name}")
 
 
@@ -55,6 +56,6 @@ RSpec.describe "As a visitor" do
 
     expect(page).to have_content('Sorry, this pet is on hold for someone better.')
     expect(current_path).to eq("/application/#{@application[1].id}")
-  end
 
+  end
 end
