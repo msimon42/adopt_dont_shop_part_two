@@ -49,6 +49,8 @@ class PetsController < ApplicationController
       flash[:sad] = 'Pets with approved applications cannot be deleted.'
       redirect_back fallback_location: '/pets/'
     else
+      pet.remove_favorite(@favorites)
+      session[:favorites] = @favorites.pets
       Pet.destroy(params[:id])
       redirect_to "/pets/"
       flash[:happy] = 'Pet successfully deleted.'
