@@ -7,7 +7,7 @@ RSpec.describe 'When user clicks delete button on pet page', type: :feature do
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 2, shelter: @shelter_1)
     @application = create :random_application
-
+    @favorites = Favorite.new([@pets[0].id.to_s])
   end
 
 
@@ -21,12 +21,20 @@ RSpec.describe 'When user clicks delete button on pet page', type: :feature do
   it 'will not delete the pet if app is approved' do
       @application.pets << @pets[0]
 
-      visit "/applications/#{@application.id}"
+      visit "/application/#{@application.id}"
 
       click_button "Approve Pet Application"
       visit "/pets/#{@pets[0].id}"
       click_button 'Delete'
       expect(page).to have_content("Pets with approved applications cannot be deleted.")
       expect(current_path).to eq("/pets/#{@pets[0].id}")
+  end
+
+  it 'will remove pet from favorites if deleted' do
+    visit "/pets/#{@pets[0].id}"
+
+    click_button 'Delete'
+    expect(@favorites.pets).to eq([])
+
   end
 end
