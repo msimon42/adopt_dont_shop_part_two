@@ -7,14 +7,8 @@ class PetapplicationsController < ApplicationController
   def create
     new_app = Application.create(application_params)
     if new_app.save
-      params[:pet].each do |id, val|
-        if val == '1'
-          pet = Pet.find(id)
-          new_app.pets << pet
-          @favorites.remove(pet.id.to_s)
-          session[:favorites] = @favorites.pets
-        end
-      end
+      new_app.add_pets(params[:pet], @favorites)
+      session[:favorites] = @favorites.pets
       flash[:happy] = 'Application submitted.'
       redirect_to '/favorites'
     else
