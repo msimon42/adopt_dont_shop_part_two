@@ -8,7 +8,7 @@
  <p>Sex: <%= @pet.sex %></p>
  <p>Adoption Status: <%= @pet.adoption_status %></p>
  <% if @pet.adopter_id %>
-    <p>On hold for <%= @adopter_name %></p>
+    <p>On hold for <%= link_to @adopter_name, "/application/#{@pet.adopter_id}" %></p>
   <% end %>
 <ul class='edit-delete'>
 <li><%= link_to "<button type='button' class='btn btn-primary'>Update Info</button>".html_safe, "/pets/#{@pet.id}/edit" %></li>
