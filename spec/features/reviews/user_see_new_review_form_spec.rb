@@ -20,6 +20,10 @@ RSpec.describe 'new review form', type: :feature do
     expect(page).to have_field('Image')
     expect(page).to have_field('Content')
     expect(page).to have_field('Rating')
+  end
+
+  it 'can create a review' do
+    visit "/shelters/#{@shelter_1.id}/new-review"
 
     fill_in 'Title', with: 'A Terrible Experience with Terrible People'
     fill_in 'Image', with: 'pebbles.png'
@@ -30,5 +34,17 @@ RSpec.describe 'new review form', type: :feature do
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     expect(page).to have_content('A Terrible Experience with Terrible People')
+  end
+
+  it 'requires user to enter all fields' do
+    visit "/shelters/#{@shelter_1.id}/new-review"
+
+    fill_in 'Title', with: 'A Terrible Experience with Terrible People'
+    fill_in 'Image', with: 'pebbles.png'
+
+    click_button 'Submit'
+
+    expect(page).to have_content('Failed to submit review. Be sure to provide all required information.')
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/new-review")
   end
 end
