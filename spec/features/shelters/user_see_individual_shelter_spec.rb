@@ -21,22 +21,19 @@ RSpec.describe 'shelters show page', type: :feature do
   end
 
   it 'can see reviews' do
-
     visit "/shelters/#{@shelter_1.id}"
 
     @reviews.each do |review|
       expect(page).to have_content(review.title)
       expect(page).to have_content(review.rating)
       expect(page).to have_content(review.content)
-      #expect(page).to have_content(review.created_at)
     end
+  end
 
     it "can show number of pets, shelter rating and number of applications" do
-      visit "/shelters"
-
+      visit "/shelters/#{@shelter_1.id}"
       expect(page).to have_content("Pet count: #{@shelter_1.pet_count}")
       expect(page).to have_content("Applications count: #{@shelter_1.applications}")
       expect(page).to have_content("Average rating: #{@shelter_1.avg_rating}")
     end
-  end
 end
