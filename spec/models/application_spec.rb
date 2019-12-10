@@ -26,7 +26,6 @@ RSpec.describe Application, type: :model do
 
     it 'can generate favorites in pet app form' do
       params = {@pets[0].id.to_s => '1', @pets[1].id.to_s => '1', @pets[2].id.to_s => '0'}
-      binding.pry
       @application.add_pets(params, @favorites)
       expect(@application.pets).to eq([@pets[0], @pets[1]])
       expect(@favorites.pets).to eq([@pets[2].id.to_s])
