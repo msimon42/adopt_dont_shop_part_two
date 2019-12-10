@@ -4,7 +4,7 @@ RSpec.describe 'When a user clicks the delete button', type: :feature do
     Shelter.delete_all
     Review.delete_all
     @shelter_1 = create :random_shelter
-    @reviews = create_list(:random_review_test, 5, shelter: @shelter_1)
+    @reviews = create_list(:random_review, 2, shelter: @shelter_1)
   end
 
   it 'deletes the review' do
