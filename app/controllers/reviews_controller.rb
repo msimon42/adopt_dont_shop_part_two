@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
       redirect_to "/shelters/#{@shelter.id}"
     else
       flash[:sad] = 'Failed to submit review. Be sure to provide all required information.'
-      render :new
+      redirect_back fallback_location: "/shelters/#{@shelter.id}/new-review"
     end
   end
 
