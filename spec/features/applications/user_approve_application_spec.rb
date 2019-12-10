@@ -9,7 +9,7 @@ RSpec.describe "As a visitor" do
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 2, shelter: @shelter_1)
     @application = create :random_application
-    
+
     @application.pets << @pets[0]
     @application.pets << @pets[1]
   end
@@ -21,7 +21,7 @@ RSpec.describe "As a visitor" do
     end
 
     expect(current_path).to eq("/pets/#{@pets[0].id}")
-    expect(page).to have_content("pending")
+    expect(page).to have_content("Pending")
     expect(page).to have_content("On hold for #{@application.name}")
 
     visit "/application/#{@application.id}"
@@ -31,7 +31,7 @@ RSpec.describe "As a visitor" do
     end
 
     expect(current_path).to eq("/pets/#{@pets[1].id}")
-    expect(page).to have_content("pending")
+    expect(page).to have_content("Pending")
     expect(page).to have_content("On hold for #{@application.name}")
 
 
