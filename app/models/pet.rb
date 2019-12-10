@@ -13,6 +13,10 @@ class Pet < ApplicationRecord
     joins(:applications).distinct
   end
 
+  def self.app_count
+    joins(:applications).count
+  end
+
   def adopter_name
     Application.find(self.adopter_id).name
   end

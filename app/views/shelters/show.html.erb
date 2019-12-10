@@ -7,6 +7,8 @@
   <li>City: <%= @shelter.city %></li>
   <li>State: <%= @shelter.state %></li>
   <li>Zip: <%= @shelter.zip %></li>
+  <li>Pet count: <%= @pet_count %></li>
+  <li>Applications count: <%= @app_count %></li>
 </ul>
 <ul class='edit-delete'>
 <li><%= link_to "<button type='button' class='btn btn-success'>Update Info</button>".html_safe, "/shelters/#{@shelter.id}/edit" %></li>
@@ -14,6 +16,7 @@
 <li><%= button_to 'Delete', "/shelters/#{@shelter.id}", method: :delete, class: 'btn btn-danger' %> </li>
 </div>
 <h3 id='reviews-header'>Reviews</h3>
+<h4>Average rating: <%= @avg_rating %></h4>
 <% @reviews.each do |review| %>
   <div class="media review" id="review-<%= review.id %>">
     <% if review.image && review.image != '' %>
