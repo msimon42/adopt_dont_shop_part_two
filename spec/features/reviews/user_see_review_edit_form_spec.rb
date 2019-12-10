@@ -29,4 +29,17 @@ RSpec.describe 'edit review form' do
     expect(page).to have_content('When I entered the shelter, a woman by the name of Maud told me my nose was too big. Very bad form.')
     expect(page).to have_content(@reviews[1].title)
   end
+
+  it "fails to update review without required information" do
+      visit "/shelters/#{@shelter_1.id}/edit-review/#{@reviews[0].id}"
+
+      fill_in 'Title', with: ''
+      fill_in 'Image', with: 'pebbles.png'
+      fill_in 'Content', with: 'When I entered the shelter, a woman by the name of Maud told me my nose was too big. Very bad form.'
+      select 1, :from => :rating
+
+      click_button 'Submit'
+
+      expect(page).to have_content("Failed to update review. Be sure to provide all required information.")
+    end
 end
