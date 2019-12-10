@@ -17,6 +17,10 @@ class Pet < ApplicationRecord
     joins(:applications).count
   end
 
+  def remove_favorite(favorites)
+    favorites.remove(self.id.to_s) if favorites.pets.include?(self.id.to_s)
+  end
+
   def adopter_name
     Application.find(self.adopter_id).name
   end
