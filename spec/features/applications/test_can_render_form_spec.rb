@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'When I visit my favorites page', type: :feature do
   before :each do
+    Shelter.delete_all
+    Pet.delete_all
+    
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 10, shelter: @shelter_1)
 

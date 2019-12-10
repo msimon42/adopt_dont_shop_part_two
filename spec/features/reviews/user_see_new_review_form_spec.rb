@@ -1,8 +1,8 @@
 RSpec.describe 'new review form', type: :feature do
 
   before :each do
+    Shelter.delete_all
     @shelter_1 = create :random_shelter
-    @reviews = create_list(:random_review, 5, shelter: @shelter_1)
   end
 
   it 'can render fields' do
