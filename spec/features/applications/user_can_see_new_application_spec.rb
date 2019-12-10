@@ -3,17 +3,13 @@ require 'rails_helper'
 RSpec.describe 'When a user visits the application show page' do
 
   before :each do
+    Shelter.delete_all
+    Pet.delete_all
+    Application.delete_all
+    
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 2, shelter: @shelter_1)
-    @application = Application.create(
-      name: 'Aloicious Hardbottom',
-      address: '123 Long RD',
-      city: 'Denver',
-      state: 'CO',
-      zip: '80218',
-      phone_number: '555-555-5555',
-      description: 'I am not a terrible person.'
-    )
+    @application = create :random_application
 
     @application.pets << @pets[0]
   end
@@ -31,5 +27,4 @@ RSpec.describe 'When a user visits the application show page' do
     click_on @pets[0].name
     expect(current_path).to eq("/pets/#{@pets[0].id}")
   end
-
-  end
+end

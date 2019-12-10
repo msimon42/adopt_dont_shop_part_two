@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe 'pet show page', type: :feature do
 
   before :each do
+    Shelter.delete_all
+    Pet.delete_all
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 2, shelter: @shelter_1)
   end

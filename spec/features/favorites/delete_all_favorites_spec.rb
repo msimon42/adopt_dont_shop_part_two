@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "When I click the Delete All button", type: :feature do
   before :each do
+    Shelter.delete_all
+    Pet.delete_all
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 10, shelter: @shelter_1)
   end

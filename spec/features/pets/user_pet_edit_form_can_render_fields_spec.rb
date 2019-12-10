@@ -1,13 +1,8 @@
 RSpec.describe 'edit pet form', type: :feature do
   before :each do
-    @shelter_1 = Shelter.create(
-      name: 'Shelter of Dog',
-      address: '123 main street',
-      city: 'Denver',
-      state: 'CO',
-      zip: '80234'
-    )
-
+    Shelter.delete_all
+    Pet.delete_all
+    @shelter_1 = create :random_shelter
     @pet_1 = create :random_pet, shelter: @shelter_1
 
   end

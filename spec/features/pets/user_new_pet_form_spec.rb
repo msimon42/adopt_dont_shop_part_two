@@ -1,6 +1,7 @@
 RSpec.describe 'new pet form', type: :feature do
 
   before :each do
+    Shelter.delete_all
     @shelter_1 = create :random_shelter
   end
 

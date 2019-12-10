@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'edit review form' do
   before :each do
+    Shelter.delete_all
+    Review.delete_all
     @shelter_1 = create :random_shelter
-    @reviews = create_list(:random_review, 2, shelter: @shelter_1)
+    @reviews = create_list(:random_review_test, 2, shelter: @shelter_1)
   end
 
   it 'can be viewed by user' do
