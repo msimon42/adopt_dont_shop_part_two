@@ -16,7 +16,7 @@
 <% @pets.each do |pet| %>
     <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
     <% if pet.adopter_id == @application.id.to_s %>
-      <li><%= button_to 'Revoke Application', "/pets/#{pet.id}/#{@application.id}", method: :patch, class: 'btn btn-danger' %></li>
+      <li><%= button_to 'Revoke Application', "/pets/#{pet.id}/#{@application.id}?adopted=true", method: :patch, class: 'btn btn-danger' %></li>
     <% else %>
       <li><%= button_to 'Approve Pet Application', "/pets/#{pet.id}/#{@application.id}", method: :patch, class: 'btn btn-success' %></li>
     <% end %>
