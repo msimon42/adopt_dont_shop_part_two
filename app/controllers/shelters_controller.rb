@@ -54,6 +54,7 @@ class SheltersController < ApplicationController
       flash[:sad] = 'Shelter with approved applications cannot be deleted.'
       redirect_back fallback_location: '/shelters/'
     else
+      shelter.pets.each {|pet| pet.remove_favorite(@favorites)}
       Shelter.destroy(params[:id])
       redirect_to "/shelters/"
       flash[:happy] = 'Shelter successfully deleted.'
