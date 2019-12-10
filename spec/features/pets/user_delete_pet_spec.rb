@@ -7,7 +7,7 @@ RSpec.describe 'When user clicks delete button on pet page', type: :feature do
     @shelter_1 = create :random_shelter
     @pets = create_list(:random_pet, 2, shelter: @shelter_1)
     @application = create :random_application
-    @favorites = Favorite.new([@pets[0].id.to_s])
+    @favorites = Favorite.new([])
   end
 
 
@@ -32,7 +32,7 @@ RSpec.describe 'When user clicks delete button on pet page', type: :feature do
 
   it 'will remove pet from favorites if deleted' do
     visit "/pets/#{@pets[0].id}"
-
+    click_button 'Favorite'
     click_button 'Delete'
     expect(@favorites.pets).to eq([])
 
