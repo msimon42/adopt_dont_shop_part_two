@@ -11,9 +11,7 @@
 <ul class='edit-delete'>
 <li><%= link_to "<button type='button' class='btn btn-success'>Update Info</button>".html_safe, "/shelters/#{@shelter.id}/edit" %></li>
 <li><%= link_to "<button type='button' class='btn btn-dark navber-color'>View Pets</button>".html_safe, "/shelters/#{@shelter.id}/pets" %></li>
-<li><%= form_tag "/shelters/#{@shelter.id}", method: :delete do %>
-  <%= submit_tag 'Delete', class: 'btn btn-danger' %></li></ul>
-<% end %>
+<li><%= button_to 'Delete', "/shelters/#{@shelter.id}", method: :delete, class: 'btn btn-danger' %> </li>
 </div>
 <h3 id='reviews-header'>Reviews</h3>
 <% @reviews.each do |review| %>
@@ -28,9 +26,7 @@
 
  <ul class='edit-delete'>
  <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "/shelters/#{@shelter.id}/edit-review/#{review.id}" %></li>
- <li><%= form_tag "/reviews/#{review.id}", method: :delete do %>
-   <%= submit_tag 'Delete', class: 'btn btn-danger' %>
- <% end %></li></ul>
+ <li><%= button_to 'Delete', "/reviews/#{review.id}", method: :delete, class: 'btn btn-danger' %></li></ul>
  </div>
  <% end %>
 <%= link_to "<button type='button' class='btn btn-dark navbar-color add-button'>Add a Review</button>".html_safe, "/shelters/#{@shelter.id}/new-review" %>

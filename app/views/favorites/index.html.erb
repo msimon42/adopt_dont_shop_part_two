@@ -8,9 +8,7 @@
         <img class="card-img-top" src="<%= pet.image %>" alt="pet_image" style='height:300px;width:22rem'>
         <div class="card-body pet-index">
           <h5 class="card-title"><%= link_to pet.name, "/pets/#{pet.id}" %></h5>
-          <%= form_tag "/favorites/#{pet.id}", method: :delete do %>
-            <%= submit_tag 'Remove Favorite', class: 'btn btn-warning' %>
-          <% end %>
+          <%= button_to 'Remove Favorite', "/favorites/#{pet.id}", method: :delete, class: 'btn btn-warning' %>
         </div>
       </div>
     <% end %>
@@ -18,9 +16,7 @@
   <div id='application-button'>
   <p id='actual-button'><%= link_to "<button type='button' class='btn btn-success'>Apply for Pets</button>".html_safe, "/application/new" %></p>
   </div>
-  <%= form_tag "/favorites", method: :delete do %>
-    <%= submit_tag 'Remove All Favorite Pets', class: 'btn btn-warning' %>
-  <% end %>
+  <%= button_to 'Remove All Favorite Pets', "/favorites", method: :delete, class: 'btn btn-warning' %>
 <% else %>
   <h2>You have no favorites :(</h2>
 <% end %>
