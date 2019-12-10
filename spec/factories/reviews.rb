@@ -7,10 +7,10 @@ FactoryBot.define do
     created_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
   end
 
-  factory :random_review_without_image, class: Review do
+  factory :random_review_test, class: Review do
     rating {rand(5)}
-    title {Faker::Quote.singular_siegler}
-    content {Faker::Quote.matz}
+    title {Faker::String.random}
+    content {Faker::String.random}
     created_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
   end
 end
