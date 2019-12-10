@@ -17,6 +17,7 @@ class SheltersController < ApplicationController
       })
     if @shelter.save
       redirect_to "/shelters"
+      flash[:happy] = "#{@shelter.name} has been created."
     else
       flash[:sad] = 'Failed to create shelter. Be sure to provide all required information.'
       render :new
@@ -25,7 +26,10 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    @app_count = @shelter.applications
+    @pet_count = @shelter.pet_count
     @reviews = @shelter.reviews
+    @avg_rating = @shelter.avg_rating
   end
 
   def edit
@@ -40,7 +44,7 @@ class SheltersController < ApplicationController
       flash[:happy] = "#{shelter.name} successfully updated."
     else
       flash[:sad] = 'Failed to update shelter. Be sure to provide all required information.'
-      render :new
+      redirect_back fallback_location: "/shelters/#{shelter.id}"
     end
   end
 
