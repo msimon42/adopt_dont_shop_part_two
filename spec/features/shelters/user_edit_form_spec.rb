@@ -26,4 +26,34 @@ RSpec.describe 'shelters edit page', type: :feature do
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
     expect(page).to have_content("Shelter of Cat")
   end
+
+  it "can not edit shelter without all of the required information" do
+
+    shelter_1 = Shelter.create(
+      name: 'Shelter of Dog',
+      address: '123 main street',
+      city: 'Denver',
+      state: 'CO',
+      zip: '80234'
+    )
+
+    visit "/shelters/#{shelter_1.id}/edit"
+
+    expect(page).to have_content("Edit Shelter")
+    expect(page).to have_field('Name')
+    expect(page).to have_field('Address')
+    expect(page).to have_field('City')
+    expect(page).to have_field('State')
+    expect(page).to have_field('Zip')
+
+    fill_in 'Name', with: 'Shelter of Cat'
+    fill_in 'Address', with: 'Shelter of Cat'
+    fill_in 'City', with: 'Shelter of Cat'
+    fill_in 'State', with: 'Shelter of Cat'
+    fill_in 'State', with: ''
+
+    click_button 'Submit'
+
+    expect(page).to have_content("Failed to update shelter. Be sure to provide all required information.")
+  end
 end
