@@ -7,7 +7,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     if @pet.adopter_id
       @adopter_name = @pet.adopter_name
-    end   
+    end
   end
 
   def new
@@ -44,8 +44,9 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    if session[:favorites].include?(params[:id])
-      flash[:sad] = 'Remove pet from favorites before deleting.'
+    pet = Pet.find(params[:id])
+    if pet.adopter_id
+      flash[:sad] = 'Pets with approved applications cannot be deleted.'
       redirect_back fallback_location: '/pets/'
     else
       Pet.destroy(params[:id])
