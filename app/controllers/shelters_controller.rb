@@ -20,9 +20,15 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    if params[:sorted] == 'rating'
+      @reviews = @shelter.reviews.sort_by_rating
+    elsif params[:sorted] == 'date'
+      @reviews = @shelter.reviews.sort_by_date  
+    else
+      @reviews = @shelter.reviews
+    end
     @app_count = @shelter.applications
     @pet_count = @shelter.pet_count
-    @reviews = @shelter.reviews
     @avg_rating = @shelter.avg_rating
   end
 

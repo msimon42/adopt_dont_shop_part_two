@@ -35,6 +35,7 @@ describe Shelter, type: :model do
       expect(@shelter.applications).to eq(1)
       expect(@shelter.pet_count).to eq(3)
       expect(@shelter.avg_rating).to eq(2)
+      expect(@shelter.approved_pets?).to eq(false)
       end
     end
 end
