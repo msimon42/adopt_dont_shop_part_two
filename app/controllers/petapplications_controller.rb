@@ -23,37 +23,36 @@ class PetapplicationsController < ApplicationController
   end
 
   def index
-    pet = Pet.find(params[:id])
     @pet_name = pet.name
     @applications = pet.applications
   end
 
   def update
-    pet = Pet.find(params[:id])
-    application = Application.find(params[:app_id])
     if params[:adopted]
-      pet.update(adoption_status: 'Available',
-                 adopter_id: nil)
+      pet.update(adoption_status: 'Available', adopter_id: nil)
       flash[:happy] = 'Application Revoked.'
       redirect_to "/application/#{application.id}"
-    elsif pet.adopter_id && pet.adopter_id != application.id.to_s
+    elsif pet.adopter_id && (pet.adopter_id != application.id.to_s)
        flash[:sad] = "Sorry, this pet is on hold for someone better."
        redirect_to "/application/#{application.id}"
     else
-      pet.update(adoption_status: 'Pending',
-                 adopter_id: application.id)
-     flash[:happy] = 'Application Approved.'
-     redirect_to "/pets/#{pet.id}"
+      pet.update(adoption_status: 'Pending', adopter_id: application.id)
+      flash[:happy] = 'Application Approved.'
+      redirect_to "/pets/#{pet.id}"
     end
   end
-
-  # def destroy
-  #   binding.pry
-  # end
 
   private
 
   def application_params
     params.permit(:name, :address, :city, :state, :zip, :phone_number, :description)
+  end
+
+  def pet
+    Pet.find(params[:id])
+  end
+
+  def application
+    Application.find(params[:app_id])
   end
 end
