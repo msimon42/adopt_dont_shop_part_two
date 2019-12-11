@@ -14,6 +14,6 @@
   <%= text_field_tag :zip, @shelter.zip, class: 'form-control' %><br>
   <div class='form-buttons'>
     <%= submit_tag 'Submit', class: 'btn btn-success' %>
-    <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter.id}" %>
+    <%= link_to "Cancel", "/shelters/#{@shelter.id}", class: 'btn btn-danger' %>
   </div>
 <% end %>

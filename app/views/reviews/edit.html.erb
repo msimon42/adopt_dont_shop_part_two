@@ -13,5 +13,5 @@
      <%= label_tag :image %>
      <%= text_field_tag :image, @review.image %><br>
      <%= submit_tag 'Submit', class: 'btn btn-success' %>
-     <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@review.shelter_id}" %>
+     <%= link_to link_to 'Cancel', "/shelters/#{@review.shelter_id}", class: 'btn btn-danger' %>
    <% end %>

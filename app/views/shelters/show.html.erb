@@ -11,8 +11,8 @@
   <li>Applications count: <%= @app_count %></li>
 </ul>
 <ul class='edit-delete'>
-<li><%= link_to "<button type='button' class='btn btn-success'>Update Info</button>".html_safe, "/shelters/#{@shelter.id}/edit" %></li>
-<li><%= link_to "<button type='button' class='btn btn-dark navber-color'>View Pets</button>".html_safe, "/shelters/#{@shelter.id}/pets" %></li>
+<li><%= link_to 'Update Info', "/shelters/#{@shelter.id}/edit", class: 'btn btn-success' %></li>
+<li><%= link_to 'View Pets', "/shelters/#{@shelter.id}/pets", class: 'btn btn-dark navbar-color' %></li>
 <li><%= button_to 'Delete', "/shelters/#{@shelter.id}", method: :delete, class: 'btn btn-danger' %> </li>
 </div>
 <h3 id='reviews-header'>Reviews</h3>
@@ -28,8 +28,8 @@
   </div>
 
  <ul class='edit-delete'>
- <li><%= link_to "<button type='button' class='btn btn-success'>Edit</button>".html_safe, "/shelters/#{@shelter.id}/edit-review/#{review.id}" %></li>
+ <li><%= link_to 'Edit', "/shelters/#{@shelter.id}/edit-review/#{review.id}", class: 'btn btn-success' %></li>
  <li><%= button_to 'Delete', "/reviews/#{review.id}", method: :delete, class: 'btn btn-danger' %></li></ul>
  </div>
  <% end %>
-<%= link_to "<button type='button' class='btn btn-dark navbar-color add-button'>Add a Review</button>".html_safe, "/shelters/#{@shelter.id}/new-review" %>
+<%= link_to 'Add a Review', "/shelters/#{@shelter.id}/new-review", class: 'btn btn-dark navbar-color' %>

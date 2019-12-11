@@ -14,7 +14,7 @@
     <% end %>
   </div>
   <div id='application-button'>
-  <p id='actual-button'><%= link_to "<button type='button' class='btn btn-success'>Apply for Pets</button>".html_safe, "/application/new" %></p>
+  <p id='actual-button'><%= link_to 'Apply for Pets', "/application/new", class: 'btn btn-success' %></p>
   </div>
   <%= button_to 'Remove All Favorite Pets', "/favorites", method: :delete, class: 'btn btn-warning' %>
 <% else %>
