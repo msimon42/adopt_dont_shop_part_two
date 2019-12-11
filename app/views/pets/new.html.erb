@@ -14,6 +14,6 @@
   Female: <%= radio_button_tag 'sex', 'Female' %></p>
   <div class='form-buttons'>
     <%= submit_tag 'Submit', class: 'btn btn-success' %>
-    <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/shelters/#{@shelter.id}/pets" %>
+    <%= link_to 'Cancel', "/shelters/#{@shelter.id}/pets", class: 'btn btn-danger' %>
   </div>
 <% end %>

@@ -12,6 +12,6 @@
   <%= text_field_tag :approx_age, @pet.approx_age, class: "form-control" %>
   <div class='form-buttons'>
     <%= submit_tag 'Submit', class: 'btn btn-success' %>
-    <%= link_to "<button type='button' class='btn btn-danger'>Cancel</button>".html_safe, "/pets/#{@pet.id}" %>
+    <%= link_to 'Cancel', "/pets/#{@pet.id}", class: 'btn btn-danger' %>
   <div>
 <% end %>

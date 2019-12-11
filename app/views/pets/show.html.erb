@@ -11,7 +11,7 @@
     <p>On hold for <%= link_to @adopter_name, "/application/#{@pet.adopter_id}" %></p>
   <% end %>
 <ul class='edit-delete'>
-<li><%= link_to "<button type='button' class='btn btn-primary'>Update Info</button>".html_safe, "/pets/#{@pet.id}/edit" %></li>
+<li><%= link_to 'Update Info', "/pets/#{@pet.id}/edit", class: 'btn btn-primary' %></li>
 <% if session[:favorites].include?(@pet.id.to_s) %>
   <li><%= button_to 'Remove Favorite', "/favorites/#{@pet.id}", method: :delete, class: 'btn btn-warning' %></li>
 <% else %>
