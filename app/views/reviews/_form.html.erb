@@ -1,0 +1,14 @@
+<%= form_tag path, method: method, class: "new-edit-form rounded" do %>
+   <%= label_tag :title %>
+   <%= text_field_tag :title,'', class: 'form-control' %>
+   <%= label_tag :content %>
+   <%= text_area_tag :content,'', class: 'form-control' %>
+   <%= label_tag :rating %>
+   <%= select_tag :rating, options_for_select((1..5).to_a) %><br>
+   <%= label_tag :image %>
+   <%= text_field_tag :image,'', class: 'form-control' %>
+   <div class='form-buttons'>
+     <%= submit_tag button_text, class: 'btn btn-success' %>
+     <%= link_to 'Cancel', "/shelters/#{@shelter_id}", class: 'btn btn-danger' %>
+   </div>
+ <% end %>
