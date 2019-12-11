@@ -27,3 +27,10 @@
   <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
 <% end %>
 </ul>
+
+<h2 style='text-align: center;'>Approved Pets</h2>
+<ul class='applied-pets'>
+<% @approved_pets.each do |pet| %>
+  <li><%= link_to pet.name, "/pets/#{pet.id}" %></li>
+<% end %>
+</ul>

@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
     ids = session[:favorites]
     @favorited_pets = Pet.find(ids)
     @applied_pets = Pet.with_applications.distinct
+    @approved_pets = Pet.approved
     @favorite_count = @favorited_pets.length
   end
 
