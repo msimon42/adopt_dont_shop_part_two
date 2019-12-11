@@ -2,6 +2,17 @@
 <header>
   <h1>Edit Review</h1>
 </header>
-<%= render partial: 'form', locals: {path: "/reviews/#{@review.id}",
-                                    method: :patch,
-                                    button_text: "Submit" } %>
+<%= form_tag "/reviews/#{@review.id}", method: :patch, class: "new-edit-form rounded" do %>
+   <%= label_tag :title %>
+   <%= text_field_tag :title,@review.title, class: 'form-control' %>
+   <%= label_tag :content %>
+   <%= text_area_tag :content,@review.content, class: 'form-control' %>
+   <%= label_tag :rating %>
+   <%= select_tag :rating, options_for_select((1..5).to_a) %><br>
+   <%= label_tag :image %>
+   <%= text_field_tag :image,@review.image, class: 'form-control' %>
+   <div class='form-buttons'>
+     <%= submit_tag 'Submit', class: 'btn btn-success' %>
+     <%= link_to 'Cancel', "/shelters/#{@shelter_id}", class: 'btn btn-danger' %>
+   </div>
+ <% end %>
