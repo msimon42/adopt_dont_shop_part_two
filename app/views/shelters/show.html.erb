@@ -17,13 +17,15 @@
 </div>
 <h3 id='reviews-header'>Reviews</h3>
 <h4>Average rating: <%= @avg_rating %></h4>
+<%= link_to 'Sort by rating', "/shelters/#{@shelter.id}/?sorted=rating", class: 'btn btn-warning' %>
+<%= link_to 'Sort by date', "/shelters/#{@shelter.id}/?sorted=date", class: 'btn btn-secondary' %>
 <% @reviews.each do |review| %>
   <div class="media review" id="review-<%= review.id %>">
     <% if review.image && review.image != '' %>
       <img src="<%= review.image %>" class="mr-3" alt="..." style="width:150px;height:150px">
     <% end %>
   <div class="media-body">
-    <h5 class="mt-0"><%= review.title %> <span id='rating'>Rating: <%= review.rating %>/5</h5>
+    <h5 class="mt-0"><%= review.title %> <span id='rating'>Rating: <%= review.rating %>/5   <%= review.created_at %> </span></h5>
     <p><%= review.content %></p>
   </div>
 

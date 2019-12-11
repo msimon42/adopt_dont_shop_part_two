@@ -26,6 +26,6 @@ class Pet < ApplicationRecord
   end
 
   def self.approved
-    Pet.where.not(adopter_id: [nil, ''])
+    where.not(adopter_id: [nil, ''])
   end
 end
