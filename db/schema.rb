@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20191209222558) do
   end
 
   create_table "pet_applications", force: :cascade do |t|
-    t.bigint "pet_id"
     t.bigint "application_id"
+    t.bigint "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["application_id"], name: "index_pet_applications_on_application_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20191209222558) do
     t.string "description"
     t.string "approx_age"
     t.string "sex"
-    t.string "adoption_status"
+    t.string "adoption_status", default: "Adoptable"
     t.bigint "shelter_id"
     t.string "adopter_id"
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20191209222558) do
     t.string "title"
     t.integer "rating"
     t.text "content"
-    t.string "image"
+    t.string "image", default: "https://i.pinimg.com/originals/d1/21/f6/d121f64f59f7599486e3762fcd2f1475.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "shelter_id"
