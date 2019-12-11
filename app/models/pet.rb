@@ -24,4 +24,8 @@ class Pet < ApplicationRecord
   def adopter_name
     Application.find(self.adopter_id).name
   end
+
+  def self.approved
+    Pet.where.not(adopter_id: [nil, ''])
+  end
 end
