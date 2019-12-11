@@ -11,6 +11,6 @@ FactoryBot.define do
     rating {rand(5)}
     title {Faker::String.random}
     content {Faker::String.random}
-    created_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
+    created_at {Faker::Time.between(from: DateTime.now - 365, to: DateTime.now)}
   end
 end
