@@ -15,7 +15,6 @@ class PetsController < ApplicationController
   end
 
   def create
-    shelter = Shelter.find(params[:id])
     pet = shelter.pets.create(pet_params)
     if pet.save
       redirect_to "/shelters/#{shelter.id}/pets"
@@ -44,7 +43,6 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    pet = Pet.find(params[:id])
     if pet.adopter_id
       flash[:sad] = 'Pets with approved applications cannot be deleted.'
       redirect_back fallback_location: '/pets/'
@@ -61,5 +59,13 @@ class PetsController < ApplicationController
 
   def pet_params
     params.permit(:image, :name, :description, :sex, :approx_age)
+  end
+
+  def pet
+    Pet.find(params[:id])
+  end
+
+  def shelter
+    Shelter.find(params[:id])
   end
 end

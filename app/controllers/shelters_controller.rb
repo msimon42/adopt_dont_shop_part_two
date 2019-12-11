@@ -8,13 +8,7 @@ class SheltersController < ApplicationController
   end
 
   def create
-    @shelter = Shelter.new({
-      name: params[:shelter][:name],
-      address: params[:shelter][:address],
-      city: params[:shelter][:city],
-      state: params[:shelter][:state],
-      zip: params[:shelter][:zip]
-      })
+    @shelter = Shelter.new(shelter_params)
     if @shelter.save
       redirect_to "/shelters"
       flash[:happy] = "#{@shelter.name} has been created."
@@ -49,7 +43,6 @@ class SheltersController < ApplicationController
   end
 
   def destroy
-    shelter = Shelter.find(params[:id])
     if shelter.approved_pets?
       flash[:sad] = 'Shelter with approved applications cannot be deleted.'
       redirect_back fallback_location: '/shelters/'
@@ -65,6 +58,10 @@ class SheltersController < ApplicationController
 
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
+  end
+
+  def shelter
+    Shelter.find(params[:id])
   end
 
 end

@@ -4,14 +4,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @shelter = Shelter.find(params[:id])
-    @new_review = @shelter.reviews.create(review_params)
+    @new_review = shelter.reviews.create(review_params)
     if @new_review.save
       flash[:happy] = 'Review submitted successfully.'
-      redirect_to "/shelters/#{@shelter.id}"
+      redirect_to "/shelters/#{shelter.id}"
     else
       flash[:sad] = 'Failed to submit review. Be sure to provide all required information.'
-      redirect_back fallback_location: "/shelters/#{@shelter.id}/new-review"
+      redirect_back fallback_location: "/shelters/#{shelter.id}/new-review"
     end
   end
 
@@ -46,5 +45,13 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.permit(:title, :content, :rating, :image)
+  end
+
+  def review
+    Review.find(params[:id])
+  end
+
+  def shelter
+    Shelter.find(params[:id])
   end
 end

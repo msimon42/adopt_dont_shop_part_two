@@ -16,7 +16,7 @@ RSpec.describe 'new shelter form' do
     fill_in 'State', with: 'CO'
     fill_in 'Zip', with: '80211'
 
-    click_on 'Create Shelter'
+    click_on 'Submit'
     new_shelter = Shelter.last
 
     expect(current_path).to eq('/shelters')
@@ -38,7 +38,7 @@ RSpec.describe 'new shelter form' do
     fill_in 'City', with: 'Denver'
     fill_in 'State', with: 'CO'
 
-    click_on 'Create Shelter'
+    click_on 'Submit'
 
     expect(page).to have_content("Failed to create shelter. Be sure to provide all required information.")
   end
