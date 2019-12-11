@@ -37,6 +37,9 @@ describe Pet, type: :model do
 
       @pets[0].remove_favorite(@favorites)
       expect(@favorites.pets).to eq([])
+
+      expect(Pet.approved).to eq([@pets[0]])
       end
     end
+
   end
