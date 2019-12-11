@@ -7,6 +7,6 @@ FactoryBot.define do
     zip {Faker::Address.zip}
     phone_number {Faker::PhoneNumber.cell_phone}
     description {Faker::Quote.matz}
-    created_at {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
+    created_at {Faker::Time.between(from: DateTime.now - 50, to: DateTime.now)}
   end
 end
