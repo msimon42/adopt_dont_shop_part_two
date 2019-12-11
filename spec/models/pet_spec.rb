@@ -28,7 +28,7 @@ describe Pet, type: :model do
 
     it "can find information on pets" do
 
-      pet_1 = Pet.create(name: "Phil", approx_age: 27, sex: "Male", image: "tst.jpg", adopter_id: "#{@application.id}")
+      pet_1 = Pet.create(shelter_id: @shelter.id, name: "Phil", approx_age: 27, sex: "Male", image: "tst.jpg", description: 'test', adopter_id: "#{@application.id}")
 
       expect(@pets[0].shelter_name).to eq(@shelter.name)
       expect(Pet.with_applications).to eq([@pets[0]])
@@ -38,7 +38,7 @@ describe Pet, type: :model do
       @pets[0].remove_favorite(@favorites)
       expect(@favorites.pets).to eq([])
 
-      expect(Pet.approved).to eq([@pets[0]])
+      expect(Pet.approved).to eq([pet_1])
       end
     end
 
