@@ -53,6 +53,11 @@ shelter_5 = Shelter.create(
 )]
 
 shelters.each do |shelter|
-  FactoryBot.create_list(:random_pet, 15, shelter: shelter)
+  pets = FactoryBot.create_list(:random_pet, 15, shelter: shelter)
   FactoryBot.create_list(:random_review, 10, shelter: shelter)
+  apps = FactoryBot.create_list(:random_application, 2)
+  apps.each do |app|
+    app.pets << pets[rand(0..7)]
+    app.pets << pets[rand(8..14)]
+  end
 end
